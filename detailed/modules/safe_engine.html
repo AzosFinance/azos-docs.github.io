@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SAFE Engine - ZAI docs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Rubik:ital,wght@0,400;0,700;0,800;1,600&display=swap"
+        rel="stylesheet"
+        />
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <span class="logo" ></span>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded affix "><li class="part-title">Documentation</li><li class="chapter-item expanded "><a href="../../detailed/intro/index.html"><strong aria-hidden="true">2.</strong> ❱ Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/intro/hai.html"><strong aria-hidden="true">2.1.</strong> Introduction to ZAI</a></li><li class="chapter-item expanded "><a href="../../detailed/intro/protocol.html"><strong aria-hidden="true">2.2.</strong> Azos Protocol 101</a></li></ol></li><li class="chapter-item expanded "><a href="../../detailed/modules/index.html"><strong aria-hidden="true">3.</strong> ❱ Core Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/modules/safe_engine.html" class="active"><strong aria-hidden="true">3.1.</strong> SAFE Engine</a></li><li class="chapter-item expanded "><a href="../../detailed/modules/acc_engine.html"><strong aria-hidden="true">3.2.</strong> Accounting Engine</a></li><li class="chapter-item expanded "><a href="../../detailed/modules/liq_engine.html"><strong aria-hidden="true">3.3.</strong> Liquidation Engine</a></li><li class="chapter-item expanded "><a href="../../detailed/modules/oracle_relayer.html"><strong aria-hidden="true">3.4.</strong> Oracle Relayer</a></li><li class="chapter-item expanded "><a href="../../detailed/modules/tax_collector.html"><strong aria-hidden="true">3.5.</strong> Tax Collector</a></li><li class="chapter-item expanded "><a href="../../detailed/modules/pid_controller.html"><strong aria-hidden="true">3.6.</strong> PID Controller</a></li><li class="chapter-item expanded "><a href="../../detailed/modules/sf_treasury.html"><strong aria-hidden="true">3.7.</strong> Stability Fee Treasury</a></li></ol></li><li class="chapter-item expanded "><a href="../../detailed/auctions/index.html"><strong aria-hidden="true">4.</strong> ❱ Auction Houses</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/auctions/cah.html"><strong aria-hidden="true">4.1.</strong> Collateral Auction House</a></li><li class="chapter-item expanded "><a href="../../detailed/auctions/dah.html"><strong aria-hidden="true">4.2.</strong> Debt Auction House</a></li><li class="chapter-item expanded "><a href="../../detailed/auctions/sah.html"><strong aria-hidden="true">4.3.</strong> Surplus Auction House</a></li></ol></li><li class="chapter-item expanded "><a href="../../detailed/settlement/index.html"><strong aria-hidden="true">5.</strong> ❱ Settlement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/settlement/global_settlement.html"><strong aria-hidden="true">5.1.</strong> Global Settlement</a></li><li class="chapter-item expanded "><a href="../../detailed/settlement/ps_sah.html"><strong aria-hidden="true">5.2.</strong> Post Settlement Surplus Auction House</a></li><li class="chapter-item expanded "><a href="../../detailed/settlement/ps_surplus_actioneer.html"><strong aria-hidden="true">5.3.</strong> Settlement Surplus Actioneer</a></li></ol></li><li class="chapter-item expanded "><a href="../../detailed/tokens/index.html"><strong aria-hidden="true">6.</strong> ❱ Tokens & Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/tokens/system_coin.html"><strong aria-hidden="true">6.1.</strong> System Coin</a></li><li class="chapter-item expanded "><a href="../../detailed/tokens/protocol_token.html"><strong aria-hidden="true">6.2.</strong> Protocol Token</a></li><li class="chapter-item expanded "><a href="../../detailed/tokens/join_adapter.html"><strong aria-hidden="true">6.3.</strong> Join Adapters</a></li></ol></li><li class="chapter-item expanded "><a href="../../detailed/utils/index.html"><strong aria-hidden="true">7.</strong> ❱ Contract Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/utils/authorizable.html"><strong aria-hidden="true">7.1.</strong> Authorizable</a></li><li class="chapter-item expanded "><a href="../../detailed/utils/modifiable.html"><strong aria-hidden="true">7.2.</strong> Modifiable</a></li><li class="chapter-item expanded "><a href="../../detailed/utils/disableable.html"><strong aria-hidden="true">7.3.</strong> Disableable</a></li><li class="chapter-item expanded "><a href="../../detailed/utils/factory/index.html"><strong aria-hidden="true">7.4.</strong> ❱ Factories</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/utils/factory/factory_child.html"><strong aria-hidden="true">7.4.1.</strong> Factory Child</a></li><li class="chapter-item expanded "><a href="../../detailed/utils/factory/authorizable_child.html"><strong aria-hidden="true">7.4.2.</strong> Authorizable Child</a></li><li class="chapter-item expanded "><a href="../../detailed/utils/factory/disableable_child.html"><strong aria-hidden="true">7.4.3.</strong> Disableable Child</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../detailed/proxies/index.html"><strong aria-hidden="true">8.</strong> ❱ Proxy Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/proxies/hai_proxy.html"><strong aria-hidden="true">8.1.</strong> ZAI Proxy</a></li><li class="chapter-item expanded "><a href="../../detailed/proxies/hai_proxy_factory.html"><strong aria-hidden="true">8.2.</strong> Proxy Factory</a></li><li class="chapter-item expanded "><a href="../../detailed/proxies/hai_safe_manager.html"><strong aria-hidden="true">8.3.</strong> SAFE Manager</a></li><li class="chapter-item expanded "><a href="../../detailed/proxies/actions/index.html"><strong aria-hidden="true">8.4.</strong> ❱ Actions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../detailed/proxies/actions/basic_actions.html"><strong aria-hidden="true">8.4.1.</strong> Basic Actions</a></li><li class="chapter-item expanded "><a href="../../detailed/proxies/actions/rewarded_actions.html"><strong aria-hidden="true">8.4.2.</strong> Rewarded Actions</a></li><li class="chapter-item expanded "><a href="../../detailed/proxies/actions/bidding_actions.html"><strong aria-hidden="true">8.4.3.</strong> Bidding Actions</a></li><li class="chapter-item expanded "><a href="../../detailed/proxies/actions/settlement_actions.html"><strong aria-hidden="true">8.4.4.</strong> Settlement Actions</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Technical Documentation</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle"></button>
+                        <button id="theme-toggle-light" class="icon-button" type="button" title="Enable light theme" aria-label="Enable light theme">
+                          <i class="fa fa-sun-o"></i>
+                        </button>
+                        <button id="theme-toggle-dark" class="icon-button" type="button" title="Enable dark theme" aria-label="Enable dark theme">
+                          <i class="fa fa-moon-o"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="safe-engine"><a class="header" href="#safe-engine">SAFE Engine</a></h1>
+<p>See <a href="/src/contracts/SAFEEngine.sol/contract.SAFEEngine.html">SAFEEngine.sol</a> for more details.</p>
+<h2 id="1-introduction"><a class="header" href="#1-introduction">1. Introduction</a></h2>
+<p>The SAFE Engine serves as the central component of the ZAI framework, managing data on user-owned SAFEs (Simplified Agreement for Future Equity) and the interest rates for different forms of collateral. It performs the following functions:</p>
+<ul>
+<li>Monitoring the debt generated at the system level, by a specific collateral type, or by individual SAFEs.</li>
+<li>Facilitating the internal movement of coins, collateral, or debt between accounts.</li>
+<li>Seizing collateral from SAFEs, usually during liquidation events.</li>
+<li>Managing account permissions.</li>
+<li>Implementing debt caps on a global scale, as well as for each type of collateral and individual SAFE.</li>
+</ul>
+<p>Users have the ability to alter the status of their SAFEs via the SAFE Engine, provided that the collateralization ratio remains above the designated minimum threshold.</p>
+<blockquote>
+<p><strong>Notice</strong>: The SAFE Engine relies on <a href="../tokens/join_adapter.html">join adapter contracts</a> to hold the balance of ERC20 tokens of the system. Transfers within the system are handled entirely by the SAFE Engine, which does not handle any ERC20 tokens directly.</p>
+</blockquote>
+<h2 id="2-contract-details"><a class="header" href="#2-contract-details">2. Contract Details</a></h2>
+<h3 id="key-methods"><a class="header" href="#key-methods">Key Methods:</a></h3>
+<p><strong>Permissioned</strong></p>
+<ul>
+<li><code>transferCollateral</code>: Transfers collateral from one account to another.</li>
+<li><code>transferInternalCoins</code>: Transfers coins from one account to another.</li>
+<li><code>transferSAFECollateralAndDebt</code>: Transfers collateral and debt from one SAFE to another.</li>
+<li><code>modifySAFECollateralization</code>: Locks/Releases collateral in a SAFE, and/or generates/repays a SAFE's debt.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>updateCollateralPrice</code>: Updates the prices of a collateral type.</li>
+<li><code>updateAccumulatedRate</code>: Updates the accumulated rate of a collateral type.</li>
+<li><code>modifyCollateralBalance</code>: Modifies the collateral balance of an account.</li>
+<li><code>confiscateSAFECollateralAndDebt</code>: Confiscates collateral and debt from a SAFE.</li>
+<li><code>disableContract</code>: Locks the SAFEs, accumulated rates, and collateral prices from being modified.</li>
+</ul>
+<h3 id="required-authorities"><a class="header" href="#required-authorities">Required Authorities:</a></h3>
+<ul>
+<li><strong>Oracle Relayer</strong>: needs authorization to call <code>updateCollateralPrice</code>.</li>
+<li><strong>Tax Collector</strong>: needs authorization to call <code>updateAccumulatedRate</code>.</li>
+<li><strong>Liquidation Engine</strong>: needs authorization to call <code>confiscateSAFECollateralAndDebt</code>.</li>
+<li><strong>Coin Join</strong>: needs authorization to call <code>transferInternalCoins</code>.</li>
+<li><strong>Collateral Join</strong>: needs authorization to call <code>modifyCollateralBalance</code>.</li>
+<li><strong>Global Settlement</strong>: needs authorization to call <code>disableContract</code>.</li>
+</ul>
+<h3 id="contract-parameters"><a class="header" href="#contract-parameters">Contract Parameters:</a></h3>
+<p><strong>Global</strong></p>
+<ul>
+<li><code>globalDebtCeiling</code>: The max amount of debt that can be generated by the system.</li>
+<li><code>safeDebtCeiling</code>: The max amount of debt that can be generated by a SAFE.</li>
+</ul>
+<p><strong>Per Collateral Type</strong></p>
+<ul>
+<li><code>debtCeiling</code>: The max amount of debt that can be generated globally by the collateral type.</li>
+<li><code>debtFloor</code>: The min amount of debt that can be generated by a SAFE of that collateral type.</li>
+</ul>
+<h3 id="contract-data"><a class="header" href="#contract-data">Contract Data:</a></h3>
+<p><strong>Global</strong></p>
+<ul>
+<li><code>globalDebt</code>: The amount of debt that was generated by the system.</li>
+<li><code>globalUnbackedDebt</code>: The amount of debt that was generated by the system and is not backed by collateral.</li>
+</ul>
+<p><strong>Per Collateral Type</strong></p>
+<ul>
+<li><code>debtAmount</code>: The amount of debt that was generated by the collateral type.</li>
+<li><code>lockedAmount</code>: The amount of collateral that is locked in all SAFEs using the collateral type.</li>
+<li><code>accumulatedRate</code>: A value that represents the accumulated interest rate.</li>
+<li><code>safetyPrice</code>: The price of the collateral type (vs ZAI) at which the SAFE is considered unsafe.</li>
+<li><code>liquidationPrice</code>: The price of the collateral type (vs ZAI) at which the SAFE is considered liquidatable.</li>
+</ul>
+<blockquote>
+<p>A user action should never be able to modify the SAFE collateralization resulting in an unsafe state. When an update the <code>safetyPrice</code> leaves the SAFE in an unsafe state, the user may only add collateral and/or repay debt in order to restore the SAFE's collateralization to a safe state.</p>
+<p><strong>Notice</strong>: The <code>lockedAmount</code> is a storage variable used to visibilize the total amount of collateral that backs the <code>debtAmount</code>. However, this value can be artificially increased, by creating a SAFE without debt and locking collateral in it: on the event of Global Settlement, this user would be allowed to withdraw all of his collateral and it would not be accounted for the redemptions.</p>
+</blockquote>
+<h2 id="3-key-mechanisms--concepts"><a class="header" href="#3-key-mechanisms--concepts">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="accounts-vs-safes"><a class="header" href="#accounts-vs-safes">ACCOUNTs vs SAFEs</a></h3>
+<p>The SAFE Engine handles 2 different types of entities:</p>
+<ul>
+<li>ACCOUNTs:
+<ul>
+<li>May have coins and collateral (non confiscatable) balance</li>
+<li>May have SAFEs (one for each collateral type)</li>
+<li>May have authorized accounts to modify their balance (or SAFEs)</li>
+<li>May have in some cases (unbacked) debt (confiscatable)</li>
+</ul>
+</li>
+<li>SAFEs:
+<ul>
+<li>Defined by the account's address (owner) and a collateral type</li>
+<li>May only have locked collateral and generated debt</li>
+<li>May be modified by the owner account, or by authorized accounts</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Notice</strong>: The protocol may be able to confiscate collateral from SAFEs, but not from ACCOUNTs, all debt generated to ACCOUNTs has is considered unbacked. Core contracts of the protocol may have debt, and they should try to settle it by destroying COINs in their balance.</p>
+</blockquote>
+<h3 id="the-collaterals--safes-accountances"><a class="header" href="#the-collaterals--safes-accountances">The Collaterals &amp; SAFEs Accountances</a></h3>
+<p>A SAFE consists of the following information:</p>
+<ul>
+<li><code>account</code>: The address of the owner.</li>
+<li><code>collateralType</code>: The collateral type identifier.</li>
+<li><code>generatedDebt</code>: The amount of debt that was generated.</li>
+<li><code>lockedCollateral</code>: The amount of collateral that is locked in.</li>
+</ul>
+<p>The SAFE Engine also tracks per collateral type the following information:</p>
+<ul>
+<li><code>accumulatedRate</code>: A value that represents the accumulated interest rate.</li>
+<li><code>safetyPrice</code>: The price of the collateral type (vs ZAI) at which the SAFE is considered unsafe.</li>
+<li><code>liquidationPrice</code>: The price of the collateral type (vs ZAI) at which the SAFE is considered liquidatable</li>
+</ul>
+<p>A SAFE is considered healthy when the following condition is met:</p>
+<pre><code>lockedCollateral * safetyPrice &gt;= generatedDebt * accumulatedRate
+</code></pre>
+<h3 id="coin-debt-and-zai-dynamics"><a class="header" href="#coin-debt-and-zai-dynamics">COIN, DEBT, and ZAI Dynamics</a></h3>
+<p>In this system, COINs and DEBT function similarly to matter and antimatter, created and annulled in pairs. The ZAI token acts as the ERC20 counterpart of a COIN when it's outside the system, maintaining a redeemable 1:1 ratio. The system enables users to lock COINs to mint ZAI or burn ZAI to unlock COINs, making them operable within the framework.</p>
+<p>DEBT, when unsecured, can be nullified using COINs on a 1:1 basis. However, within SAFEs, the relationship between <code>generatedDebt</code> and generated COINs diverges from the 1:1 ratio.</p>
+<h3 id="interest-accumulation"><a class="header" href="#interest-accumulation">Interest Accumulation</a></h3>
+<p>The "accumulated rate" represents the constantly accumulating interest or fees on the outstanding ZAI-generated debt. Calculated over time, it's based on the amount of ZAI minted and the applicable stability fee rate. This ensures that the debt owed by users evolves due to the ongoing addition of the stability fee. Whenever a user mints or repays ZAI, the formula for <code>generatedDebt</code> is:</p>
+<pre><code>coinAmount = generatedDebt * accumulatedRate
+</code></pre>
+<p>Here, <code>coinAmount</code> is the number of coins the user wishes to mint or burn, and <code>accumulatedRate</code> is the relevant collateral's accumulated interest rate. The <code>coinAmount</code> could also be a negative figure, indicating debt dissolution.</p>
+<blockquote>
+<p><strong>Example</strong>: Assume a 10% annual interest rate on collateral TKN.</p>
+<p>Initially, the <code>accumulatedRate</code> is 1. When Alice mints 100 ZAI tokens (COINs) from the SAFE Engine, her resulting debt is <code>100 * 1 = 100</code>.</p>
+<p>After one year, Alice repays her 100 debt. Now, the <code>accumulatedRate</code> stands at 1.1, requiring Alice to repay <code>100 * 1.1 = 110</code> ZAI tokens.</p>
+<p>Concurrently, Bob mints 100 ZAI, resulting in a (<code>100 / 1.1</code>) <code>90.9</code> debt.</p>
+<p>By year two, the <code>accumulatedRate</code> becomes 1.21. To repay his debt, Bob needs <code>90.9 * 1.21 = 110</code> ZAI tokens, identical to Alice's amount.</p>
+<p><strong>Note</strong>: Negative interest rates could technically be implemented using the same mechanics.</p>
+</blockquote>
+<p>Whenever the system refreshes the <code>accumulatedRate</code>, it leads to a surplus of COINs that get allocated to an unspecified address. This surplus emerges from the <code>updateAccumulatedRate</code> function, invoked by the Tax Collector. Importantly, these additional COINs are not directly extracted from any SAFE; instead, they manifest as a simultaneous debt increment for all SAFEs holding the taxed collateral type.</p>
+<h3 id="transfer-collateral-and-coins-events"><a class="header" href="#transfer-collateral-and-coins-events">Transfer Collateral and Coins events</a></h3>
+<p>Since the transfer of collateral and coins is handled by the SAFE Engine, the events <code>TransferCollateral</code> and <code>TransferInternalCoins</code> are emitted by the SAFE Engine, and not by the ERC20 contracts. The events emitted by the SAFE Engine try to follow the same structure as the ERC20 events, but with the addition of the collateral type identifier in the <code>TransferCollateral</code> event.</p>
+<p><strong>Generating Debt and minting ZAI</strong>:</p>
+<ul>
+<li>Lock collateral in a SAFE:
+<ul>
+<li>Deposit TKN: <code>TransferCollateral(TKN, source, ACCOUNT, amount)</code></li>
+<li>Lock TKN:
+<ul>
+<li><code>TransferCollateral(TKN, ACCOUNT, 0, amount)</code></li>
+<li><code>TransferCollateral(TKN, 0, SAFE, amount)</code></li>
+</ul>
+</li>
+<li>Generate DEBT: <code>TransferInternalCoins(0, ACCOUNT, amount)</code></li>
+<li>Mint ZAI:
+<ul>
+<li><code>TransferInternalCoins(ACCOUNT, COIN_JOIN, amount)</code></li>
+<li><code>ERC20.Transfer(0, destination, amount)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-gotchas"><a class="header" href="#4-gotchas">4. Gotchas</a></h2>
+<h3 id="permissioned-vs-authorized"><a class="header" href="#permissioned-vs-authorized">Permissioned vs Authorized</a></h3>
+<p>Authorized accounts are addresses allowed to call SAFE Engine <code>isAuthorized</code> methods. While a SAFE can add approval to an account, which gives permission to the account to modify the SAFE's state (on <code>isSAFEAllowed</code> methods), this account is not authorized to call SAFE Engine authorized methods (<code>isAuthorized</code>).</p>
+<h3 id="safe-state-vs-coin-and-debt"><a class="header" href="#safe-state-vs-coin-and-debt">SAFE State vs COIN and DEBT</a></h3>
+<p>The <code>generatedDebt</code> and <code>lockedCollateral</code> of a SAFE is measured in WAD units, while the COINs and DEBT (that gets limited, for example, by the debt ceilings) are measured in RAD units.</p>
+<blockquote>
+<p><strong>Notice</strong>: The reason for this is that the resultant <code>COIN|DEBT</code> is calculated by:</p>
+<pre><code>generatedDebt[WAD] * accumulatedRate[RAY] = COIN|DEBT[RAD]
+</code></pre>
+</blockquote>
+<h3 id="collateral-balance-vs-locked-collateral"><a class="header" href="#collateral-balance-vs-locked-collateral">Collateral Balance vs Locked Collateral</a></h3>
+<p>As stated before, an ACCOUNT can have collateral balance, and an account's SAFE can have locked collateral. The difference between these two is that the collateral balance is the amount of collateral that the user has available to use (transfer or withdraw), and the locked collateral is the amount of collateral that the user has locked in a SAFE, that the user would need to modify the SAFE collateralization in order to use.</p>
+<h3 id="unbacked-debt-and-debt-settlement"><a class="header" href="#unbacked-debt-and-debt-settlement">Unbacked Debt and Debt Settlement</a></h3>
+<p>Unbacked debt, or debt that is accounted to an ACCOUNT (not a SAFE with locked collateral) is only generated to contracts of the protocol. This debt can only be settled by having an equal an equal amount of COINs in the ACCOUNT's balance, and calling <code>settleDebt</code> with the amount of DEBT/COINs to destroy.</p>
+<p>This debt is only generated when a SAFE gets liquidated, a portion of the SAFE's collateral is transferred to the Collateral Auction House, the SAFE's debt is transferred to the Accounting Engine (unbacked). The Auction House will the transfer COINs to the Accounting Engine in order for the debt to be settled.</p>
+<h3 id="confiscation-of-collateral-and-debt"><a class="header" href="#confiscation-of-collateral-and-debt">Confiscation of Collateral and Debt</a></h3>
+<p>An authorized account may call <code>confiscateSAFECollateralAndDebt</code> to confiscate the locked collateral and/or debt of a SAFE. This method does not perform any checks on the SAFE's state. The flow of value is inversed when it happens during liquidations, than when the system is under global settlement. This means that this method is always authorized to arbitrarily modify the SAFE's state (and the DEBT balance of an account), even after the system was shutdown.</p>
+<!-- TODO: mv to proxy section
+### Proxy Accounts (SAFE Manager)
+In orther to facilitate the management of SAFEs, the protocol incorporates a SAFE Manager contract allowing a same user to control multiple SAFEs with the same collateral type. This interaction is done through an ownable proxy contract, and a SAFE Handler.
+
+- The user's Proxy
+    - has an account in the SAFE Engine (can hold collateral and coins).
+    - can create a new SAFE (deploying a new SAFE Handler) identified by an #ID (autoincremental).
+    - is the owner (in the SAFE Manager) of the SAFE that's identified by the SAFE Handler.
+- The SAFE Handler
+    - account that authorizes the SAFE Manager (in the SAFE Engine) to modify the SAFE in its behalf.
+    - has no other functionality.
+- To deposit/withdraw collateral, the tokens are transferred from/to the user's Proxy account to/from the SAFE Handler's SAFE.
+- To generate/repay debt, the coins are transferred from/to the user's Proxy account to/from the SAFE Handler's SAFE.
+
+**Notice**: Regular users may find that their `coinBalance` (in their proxy address) is usually `0` (or close to), as proxy interactions are designed to always use the `coinBalance` to mint ZAI and transfer the ERC20 to the user's address.
+-->
+<h2 id="5-failure-modes"><a class="header" href="#5-failure-modes">5. Failure Modes</a></h2>
+<h3 id="parameters-misconfiguration"><a class="header" href="#parameters-misconfiguration">Parameters misconfiguration</a></h3>
+<ul>
+<li>Low <code>globalDebtCeiling</code> may limit user borrowing.</li>
+<li>High <code>globalDebtCeiling</code> risks debt overload.</li>
+<li>Low <code>safeDebtCeiling</code> hampers individual borrowing.</li>
+<li><code>safeDebtCeiling</code> above <code>globalDebtCeiling</code> is likely moot.</li>
+<li>Low <code>cType.debtCeiling</code> curbs borrowing for specific collateral.</li>
+<li><code>cType.debtCeiling</code> above <code>globalDebtCeiling</code> is typically irrelevant.</li>
+<li>Low <code>cType.debtFloor</code> raises liquidation risks.</li>
+<li>High <code>cType.debtFloor</code> deters small borrowers.</li>
+</ul>
+<h3 id="liquidation-mechanics"><a class="header" href="#liquidation-mechanics">Liquidation mechanics</a></h3>
+<p>Despite the fact that the SAFE Engine holds the latest collateral prices and SAFE state, the liquidation of a SAFE is handled by the Liquidation Engine. The Liquidation Engine is authorized to call <code>confiscateSAFECollateralAndDebt</code>, which doesn't perform healthy checks, and allows it to modify the SAFE's state in an arbitrary way. If the Liquidation Engine (or any authorized address) is misconfigured, it may result in the liquidation of SAFEs that are not unsafe, or malicious modifications to any SAFE's state.</p>
+<h3 id="accumulated-rate-and-collateral-prices"><a class="header" href="#accumulated-rate-and-collateral-prices">Accumulated Rate and Collateral Prices</a></h3>
+<p>Both the <code>updateAccumulatedRate</code> and <code>updateCollateralPrice</code> are authorized methods that perform no further checks in the validity of the parameters passed. If the Oracle Relayer or the Tax Collector (or any other authorized address) are misconfigured, it may result in the <code>accumulatedRate</code> or <code>safetyPrice</code> being set to an arbitrary value.</p>
+<p>If the <code>accumulatedRate</code> for a given collateral type is set to <code>0</code>, the collateral type may be bricked beyond repair, as the <code>accumulatedRate</code> is iteratively calculated by multiplying the previous value to a multiplier.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../detailed/modules/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../detailed/modules/acc_engine.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../detailed/modules/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../detailed/modules/acc_engine.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -1,0 +1,1443 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ZAI docs</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Rubik:ital,wght@0,400;0,700;0,800;1,600&display=swap"
+        rel="stylesheet"
+        />
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <span class="logo" ></span>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded affix "><li class="part-title">Documentation</li><li class="chapter-item expanded "><a href="detailed/intro/index.html"><strong aria-hidden="true">2.</strong> ❱ Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/intro/hai.html"><strong aria-hidden="true">2.1.</strong> Introduction to ZAI</a></li><li class="chapter-item expanded "><a href="detailed/intro/protocol.html"><strong aria-hidden="true">2.2.</strong> Azos Protocol 101</a></li></ol></li><li class="chapter-item expanded "><a href="detailed/modules/index.html"><strong aria-hidden="true">3.</strong> ❱ Core Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/modules/safe_engine.html"><strong aria-hidden="true">3.1.</strong> SAFE Engine</a></li><li class="chapter-item expanded "><a href="detailed/modules/acc_engine.html"><strong aria-hidden="true">3.2.</strong> Accounting Engine</a></li><li class="chapter-item expanded "><a href="detailed/modules/liq_engine.html"><strong aria-hidden="true">3.3.</strong> Liquidation Engine</a></li><li class="chapter-item expanded "><a href="detailed/modules/oracle_relayer.html"><strong aria-hidden="true">3.4.</strong> Oracle Relayer</a></li><li class="chapter-item expanded "><a href="detailed/modules/tax_collector.html"><strong aria-hidden="true">3.5.</strong> Tax Collector</a></li><li class="chapter-item expanded "><a href="detailed/modules/pid_controller.html"><strong aria-hidden="true">3.6.</strong> PID Controller</a></li><li class="chapter-item expanded "><a href="detailed/modules/sf_treasury.html"><strong aria-hidden="true">3.7.</strong> Stability Fee Treasury</a></li></ol></li><li class="chapter-item expanded "><a href="detailed/auctions/index.html"><strong aria-hidden="true">4.</strong> ❱ Auction Houses</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/auctions/cah.html"><strong aria-hidden="true">4.1.</strong> Collateral Auction House</a></li><li class="chapter-item expanded "><a href="detailed/auctions/dah.html"><strong aria-hidden="true">4.2.</strong> Debt Auction House</a></li><li class="chapter-item expanded "><a href="detailed/auctions/sah.html"><strong aria-hidden="true">4.3.</strong> Surplus Auction House</a></li></ol></li><li class="chapter-item expanded "><a href="detailed/settlement/index.html"><strong aria-hidden="true">5.</strong> ❱ Settlement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/settlement/global_settlement.html"><strong aria-hidden="true">5.1.</strong> Global Settlement</a></li><li class="chapter-item expanded "><a href="detailed/settlement/ps_sah.html"><strong aria-hidden="true">5.2.</strong> Post Settlement Surplus Auction House</a></li><li class="chapter-item expanded "><a href="detailed/settlement/ps_surplus_actioneer.html"><strong aria-hidden="true">5.3.</strong> Settlement Surplus Actioneer</a></li></ol></li><li class="chapter-item expanded "><a href="detailed/tokens/index.html"><strong aria-hidden="true">6.</strong> ❱ Tokens & Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/tokens/system_coin.html"><strong aria-hidden="true">6.1.</strong> System Coin</a></li><li class="chapter-item expanded "><a href="detailed/tokens/protocol_token.html"><strong aria-hidden="true">6.2.</strong> Protocol Token</a></li><li class="chapter-item expanded "><a href="detailed/tokens/join_adapter.html"><strong aria-hidden="true">6.3.</strong> Join Adapters</a></li></ol></li><li class="chapter-item expanded "><a href="detailed/utils/index.html"><strong aria-hidden="true">7.</strong> ❱ Contract Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/utils/authorizable.html"><strong aria-hidden="true">7.1.</strong> Authorizable</a></li><li class="chapter-item expanded "><a href="detailed/utils/modifiable.html"><strong aria-hidden="true">7.2.</strong> Modifiable</a></li><li class="chapter-item expanded "><a href="detailed/utils/disableable.html"><strong aria-hidden="true">7.3.</strong> Disableable</a></li><li class="chapter-item expanded "><a href="detailed/utils/factory/index.html"><strong aria-hidden="true">7.4.</strong> ❱ Factories</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/utils/factory/factory_child.html"><strong aria-hidden="true">7.4.1.</strong> Factory Child</a></li><li class="chapter-item expanded "><a href="detailed/utils/factory/authorizable_child.html"><strong aria-hidden="true">7.4.2.</strong> Authorizable Child</a></li><li class="chapter-item expanded "><a href="detailed/utils/factory/disableable_child.html"><strong aria-hidden="true">7.4.3.</strong> Disableable Child</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="detailed/proxies/index.html"><strong aria-hidden="true">8.</strong> ❱ Proxy Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/proxies/hai_proxy.html"><strong aria-hidden="true">8.1.</strong> ZAI Proxy</a></li><li class="chapter-item expanded "><a href="detailed/proxies/hai_proxy_factory.html"><strong aria-hidden="true">8.2.</strong> Proxy Factory</a></li><li class="chapter-item expanded "><a href="detailed/proxies/hai_safe_manager.html"><strong aria-hidden="true">8.3.</strong> SAFE Manager</a></li><li class="chapter-item expanded "><a href="detailed/proxies/actions/index.html"><strong aria-hidden="true">8.4.</strong> ❱ Actions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="detailed/proxies/actions/basic_actions.html"><strong aria-hidden="true">8.4.1.</strong> Basic Actions</a></li><li class="chapter-item expanded "><a href="detailed/proxies/actions/rewarded_actions.html"><strong aria-hidden="true">8.4.2.</strong> Rewarded Actions</a></li><li class="chapter-item expanded "><a href="detailed/proxies/actions/bidding_actions.html"><strong aria-hidden="true">8.4.3.</strong> Bidding Actions</a></li><li class="chapter-item expanded "><a href="detailed/proxies/actions/settlement_actions.html"><strong aria-hidden="true">8.4.4.</strong> Settlement Actions</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Technical Documentation</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle"></button>
+                        <button id="theme-toggle-light" class="icon-button" type="button" title="Enable light theme" aria-label="Enable light theme">
+                          <i class="fa fa-sun-o"></i>
+                        </button>
+                        <button id="theme-toggle-dark" class="icon-button" type="button" title="Enable dark theme" aria-label="Enable dark theme">
+                          <i class="fa fa-moon-o"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="zai"><a class="header" href="#zai">ZAI</a></h1>
+<p>This repository contains the core documentation for the Azos Platform and ZAI, a GEB fork. GEB is the abbreviation of <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">Gödel, Escher and Bach</a> as well as the name of an <a href="https://en.wikipedia.org/wiki/Geb">Egyptian god</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-getting-started"><a class="header" href="#-getting-started">❱ Getting Started</a></h1>
+<p>Welcome to the "Getting Started" guide for the Azos Protocol. If you're new to the system or looking for a concise introduction, you've come to the right place. This section is designed to provide you with a straightforward overview of the essential concepts and steps needed to interact with the Azos ecosystem. Whether you're planning to mint stablecoins, or understand the intricacies of our smart contracts, this guide will equip you with the basic knowledge to take your first steps. Let's dive in!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-zai"><a class="header" href="#introduction-to-zai">Introduction to ZAI</a></h1>
+<h2 id="introduction-to-zai-a-framework-for-stablecoin-systems"><a class="header" href="#introduction-to-zai-a-framework-for-stablecoin-systems">Introduction to ZAI: A Framework for Stablecoin Systems</a></h2>
+<p>ZAI serves as a framework for creating systems capable of issuing stablecoins. These stablecoins not only act as a reliable source of collateral for other DeFi protocols—when compared to assets like ETH or BTC—but also function as a store of value, complete with an integrated funding rate.</p>
+<p>For a comprehensive understanding of the ZAI framework, this documentation aims to detail each of its components. We strongly recommend reviewing Reflexer's original <a href="https://github.com/reflexer-labs/whitepapers/blob/master/English/rai-english.pdf">whitepaper</a> as a precursor to this documentation.</p>
+<h4 id="core-differentiators-of-zai-from-geb"><a class="header" href="#core-differentiators-of-zai-from-geb">Core Differentiators of ZAI from GEB</a></h4>
+<p>ZAI is an enhanced fork of <a href="https://github.com/reflexer-labs/geb">GEB</a>, but it comes with several key distinctions:</p>
+<ul>
+<li><strong>Advanced System Parameter Controls</strong>: ZAI features refined mechanisms for managing system parameters, offering superior flexibility and control.</li>
+<li><strong>Enhanced Deployment and Upgradeability</strong>: The framework allows for streamlined deployment and upgrades, simplifying system maintenance.</li>
+<li><strong>Robust Testing and Simulation Suite</strong>: ZAI includes an upgraded testing and simulation environment, aiding in the identification and mitigation of system risks.</li>
+<li><strong>Emphasis on Multi-Collateral Operations</strong>: ZAI is designed with a focus on handling multiple types of collateral, broadening its application scope.</li>
+<li><strong>Inclusion of Factories for Common Contract Types</strong>: The framework comes with pre-built factories for commonly used contract types, reducing the operations needed for collateral setup.</li>
+<li><strong>Standardized Methods and Contract Utilities</strong>: ZAI standardizes the way contracts and methods are utilized, making it easier for developers to generate changes across the system.</li>
+<li><strong>Revamped Contract Interactions</strong>: The framework restructures the way contracts communicate with each other, leading to more efficient and reliable operations.</li>
+</ul>
+<p>By incorporating these features, ZAI aims to provide a more advanced, reliable, and user-friendly stablecoin system.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="azos-protocol-101"><a class="header" href="#azos-protocol-101">Azos Protocol 101</a></h1>
+<h2 id="zai-framework-mechanics"><a class="header" href="#zai-framework-mechanics">ZAI Framework Mechanics</a></h2>
+<h3 id="what-is-zai"><a class="header" href="#what-is-zai">What is ZAI?</a></h3>
+<ul>
+<li><strong>Low-Cost</strong>: The ZAI protocol is deployed on the Optimism network, offering significantly low gas fees for transactions.</li>
+<li><strong>Dollar-Denominated</strong>: Both the system coin and the collaterals are denominated in US Dollar.</li>
+<li><strong>Collateral-Backed</strong>: A diverse basket of collateral types backs the minting of the system coin.</li>
+<li><strong>Control-Pegged</strong>: A PID controller dynamically adjusts the funding rate to balance value transfer between minters (debtors) and holders (creditors).</li>
+<li><strong>Settleable</strong>: The system can undergo a Global Settlement, during which all debts are squared and ZAI holders can redeem tokens for a share of the collateral pool, regardless of whether they have outstanding debts.</li>
+</ul>
+<h3 id="glossary"><a class="header" href="#glossary">Glossary</a></h3>
+<h4 id="units-of-measurement"><a class="header" href="#units-of-measurement">Units of Measurement</a></h4>
+<ul>
+<li><code>WEI</code>: The base unit for raw ERC20 amounts.</li>
+<li><code>WAD</code>: A unit with <strong>18 decimal places</strong>, used for representing balances.</li>
+<li><code>RAY</code>: A unit with <strong>27 decimal places</strong>, utilized for rate computations.</li>
+<li><code>RAD</code>: A unit with <strong>45 decimal places</strong>, employed for calculating owed amounts.
+<blockquote>
+<p><strong>Note</strong>: The <a href="detailed/intro//src/libraries/Math.sol/library.Math.html">Math Library</a> handles all unit multiplications and divisions.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="tokens"><a class="header" href="#tokens">Tokens</a></h4>
+<ul>
+<li><code>systemCoin</code>: The ERC20 stablecoin issued by ZAI.</li>
+<li><code>protocolToken</code>: The ERC20 governance token, used for system parameter voting and participating in debt/surplus auctions.</li>
+<li><code>collateral</code>: Any ERC20 token that serves as collateral, enhancing the corresponding <code>cType</code> balance.</li>
+</ul>
+<h4 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h4>
+<ul>
+<li><code>cType</code>: Represents a unique identifier for a collateral type within the ZAI system.</li>
+<li><code>COIN</code>: An internal balance of system coins convertible to <code>systemCoin</code> on a <code>1:1</code> basis.</li>
+<li><code>DEBT</code>: An internal ledger entry representing unbacked debt, erasable with <code>COIN</code> on a <code>1:1</code> basis.</li>
+<li><code>SAFE</code>: A vault-like contract holding collateral and generating <code>COINs</code>, which may also accrue <code>DEBT</code>.
+<ul>
+<li><code>lockedCollateral</code>: The collateral amount held within a <code>SAFE</code>.</li>
+<li><code>generatedDebt</code>: The debt incurred by a <code>SAFE</code> during the <code>COIN</code> generation process. Note that it does <strong>NOT</strong> correlate directly to the amount of <code>COINs</code> generated.</li>
+<li><strong>Liquidation</strong>: A process triggered for under-collateralized SAFEs, wherein their <code>generatedDebt</code> is moved to the system's <code>DEBT</code> and collateral is seized for auction to cancel out the <code>DEBT</code>.</li>
+</ul>
+</li>
+<li><code>redemptionPrice</code>: The internal price at which system coins can be exchanged for collateral.</li>
+<li><code>targetPrice</code>: A reference price utilized to adjust the <code>redemptionPrice</code>, often aligned with market price.</li>
+<li><code>redemptionRate</code>: Governs how the <code>redemptionPrice</code> changes over time, essentially functioning as the system's funding rate.</li>
+<li><code>stabilityFee</code>: A separate interest rate, unconnected to the <code>redemptionRate</code>, applied to user debts and collected by the system.</li>
+<li><code>accumulatedRate</code>: Reflects the compounded <code>stabilityFee</code> applied to a <code>cType</code>, determining the relationship between <code>generatedDebt</code> and the <code>COINs</code> produced.</li>
+</ul>
+<p>This guide aims to provide a comprehensive understanding of ZAI's framework and its intricacies. Armed with this knowledge, you'll be better equipped to interact with the protocol effectively.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-core-modules"><a class="header" href="#-core-modules">❱ Core Modules</a></h1>
+<p>Welcome to the core contracts that make up the Azos Protocol. This is your go-to resource for understanding the architecture and components that underpin the ZAI system. From collateral management and stablecoin issuance to governance and global settlement, these contracts are the building blocks that ensure the protocol's stability, scalability, and security.</p>
+<p>Whether you're a developer, a system administrator, or just an enthusiast interested in the mechanics of the Azos Protocol, this index provides detailed information on each core contract and its role within the system. Explore how they interact, understand their functionalities, and learn how they contribute to the robust framework that makes ZAI a leader in decentralized finance.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="safe-engine"><a class="header" href="#safe-engine">SAFE Engine</a></h1>
+<p>See <a href="detailed/modules//src/contracts/SAFEEngine.sol/contract.SAFEEngine.html">SAFEEngine.sol</a> for more details.</p>
+<h2 id="1-introduction"><a class="header" href="#1-introduction">1. Introduction</a></h2>
+<p>The SAFE Engine serves as the central component of the ZAI framework, managing data on user-owned SAFEs (Simplified Agreement for Future Equity) and the interest rates for different forms of collateral. It performs the following functions:</p>
+<ul>
+<li>Monitoring the debt generated at the system level, by a specific collateral type, or by individual SAFEs.</li>
+<li>Facilitating the internal movement of coins, collateral, or debt between accounts.</li>
+<li>Seizing collateral from SAFEs, usually during liquidation events.</li>
+<li>Managing account permissions.</li>
+<li>Implementing debt caps on a global scale, as well as for each type of collateral and individual SAFE.</li>
+</ul>
+<p>Users have the ability to alter the status of their SAFEs via the SAFE Engine, provided that the collateralization ratio remains above the designated minimum threshold.</p>
+<blockquote>
+<p><strong>Notice</strong>: The SAFE Engine relies on <a href="detailed/modules/../tokens/join_adapter.html">join adapter contracts</a> to hold the balance of ERC20 tokens of the system. Transfers within the system are handled entirely by the SAFE Engine, which does not handle any ERC20 tokens directly.</p>
+</blockquote>
+<h2 id="2-contract-details"><a class="header" href="#2-contract-details">2. Contract Details</a></h2>
+<h3 id="key-methods"><a class="header" href="#key-methods">Key Methods:</a></h3>
+<p><strong>Permissioned</strong></p>
+<ul>
+<li><code>transferCollateral</code>: Transfers collateral from one account to another.</li>
+<li><code>transferInternalCoins</code>: Transfers coins from one account to another.</li>
+<li><code>transferSAFECollateralAndDebt</code>: Transfers collateral and debt from one SAFE to another.</li>
+<li><code>modifySAFECollateralization</code>: Locks/Releases collateral in a SAFE, and/or generates/repays a SAFE's debt.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>updateCollateralPrice</code>: Updates the prices of a collateral type.</li>
+<li><code>updateAccumulatedRate</code>: Updates the accumulated rate of a collateral type.</li>
+<li><code>modifyCollateralBalance</code>: Modifies the collateral balance of an account.</li>
+<li><code>confiscateSAFECollateralAndDebt</code>: Confiscates collateral and debt from a SAFE.</li>
+<li><code>disableContract</code>: Locks the SAFEs, accumulated rates, and collateral prices from being modified.</li>
+</ul>
+<h3 id="required-authorities"><a class="header" href="#required-authorities">Required Authorities:</a></h3>
+<ul>
+<li><strong>Oracle Relayer</strong>: needs authorization to call <code>updateCollateralPrice</code>.</li>
+<li><strong>Tax Collector</strong>: needs authorization to call <code>updateAccumulatedRate</code>.</li>
+<li><strong>Liquidation Engine</strong>: needs authorization to call <code>confiscateSAFECollateralAndDebt</code>.</li>
+<li><strong>Coin Join</strong>: needs authorization to call <code>transferInternalCoins</code>.</li>
+<li><strong>Collateral Join</strong>: needs authorization to call <code>modifyCollateralBalance</code>.</li>
+<li><strong>Global Settlement</strong>: needs authorization to call <code>disableContract</code>.</li>
+</ul>
+<h3 id="contract-parameters"><a class="header" href="#contract-parameters">Contract Parameters:</a></h3>
+<p><strong>Global</strong></p>
+<ul>
+<li><code>globalDebtCeiling</code>: The max amount of debt that can be generated by the system.</li>
+<li><code>safeDebtCeiling</code>: The max amount of debt that can be generated by a SAFE.</li>
+</ul>
+<p><strong>Per Collateral Type</strong></p>
+<ul>
+<li><code>debtCeiling</code>: The max amount of debt that can be generated globally by the collateral type.</li>
+<li><code>debtFloor</code>: The min amount of debt that can be generated by a SAFE of that collateral type.</li>
+</ul>
+<h3 id="contract-data"><a class="header" href="#contract-data">Contract Data:</a></h3>
+<p><strong>Global</strong></p>
+<ul>
+<li><code>globalDebt</code>: The amount of debt that was generated by the system.</li>
+<li><code>globalUnbackedDebt</code>: The amount of debt that was generated by the system and is not backed by collateral.</li>
+</ul>
+<p><strong>Per Collateral Type</strong></p>
+<ul>
+<li><code>debtAmount</code>: The amount of debt that was generated by the collateral type.</li>
+<li><code>lockedAmount</code>: The amount of collateral that is locked in all SAFEs using the collateral type.</li>
+<li><code>accumulatedRate</code>: A value that represents the accumulated interest rate.</li>
+<li><code>safetyPrice</code>: The price of the collateral type (vs ZAI) at which the SAFE is considered unsafe.</li>
+<li><code>liquidationPrice</code>: The price of the collateral type (vs ZAI) at which the SAFE is considered liquidatable.</li>
+</ul>
+<blockquote>
+<p>A user action should never be able to modify the SAFE collateralization resulting in an unsafe state. When an update the <code>safetyPrice</code> leaves the SAFE in an unsafe state, the user may only add collateral and/or repay debt in order to restore the SAFE's collateralization to a safe state.</p>
+<p><strong>Notice</strong>: The <code>lockedAmount</code> is a storage variable used to visibilize the total amount of collateral that backs the <code>debtAmount</code>. However, this value can be artificially increased, by creating a SAFE without debt and locking collateral in it: on the event of Global Settlement, this user would be allowed to withdraw all of his collateral and it would not be accounted for the redemptions.</p>
+</blockquote>
+<h2 id="3-key-mechanisms--concepts"><a class="header" href="#3-key-mechanisms--concepts">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="accounts-vs-safes"><a class="header" href="#accounts-vs-safes">ACCOUNTs vs SAFEs</a></h3>
+<p>The SAFE Engine handles 2 different types of entities:</p>
+<ul>
+<li>ACCOUNTs:
+<ul>
+<li>May have coins and collateral (non confiscatable) balance</li>
+<li>May have SAFEs (one for each collateral type)</li>
+<li>May have authorized accounts to modify their balance (or SAFEs)</li>
+<li>May have in some cases (unbacked) debt (confiscatable)</li>
+</ul>
+</li>
+<li>SAFEs:
+<ul>
+<li>Defined by the account's address (owner) and a collateral type</li>
+<li>May only have locked collateral and generated debt</li>
+<li>May be modified by the owner account, or by authorized accounts</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Notice</strong>: The protocol may be able to confiscate collateral from SAFEs, but not from ACCOUNTs, all debt generated to ACCOUNTs has is considered unbacked. Core contracts of the protocol may have debt, and they should try to settle it by destroying COINs in their balance.</p>
+</blockquote>
+<h3 id="the-collaterals--safes-accountances"><a class="header" href="#the-collaterals--safes-accountances">The Collaterals &amp; SAFEs Accountances</a></h3>
+<p>A SAFE consists of the following information:</p>
+<ul>
+<li><code>account</code>: The address of the owner.</li>
+<li><code>collateralType</code>: The collateral type identifier.</li>
+<li><code>generatedDebt</code>: The amount of debt that was generated.</li>
+<li><code>lockedCollateral</code>: The amount of collateral that is locked in.</li>
+</ul>
+<p>The SAFE Engine also tracks per collateral type the following information:</p>
+<ul>
+<li><code>accumulatedRate</code>: A value that represents the accumulated interest rate.</li>
+<li><code>safetyPrice</code>: The price of the collateral type (vs ZAI) at which the SAFE is considered unsafe.</li>
+<li><code>liquidationPrice</code>: The price of the collateral type (vs ZAI) at which the SAFE is considered liquidatable</li>
+</ul>
+<p>A SAFE is considered healthy when the following condition is met:</p>
+<pre><code>lockedCollateral * safetyPrice &gt;= generatedDebt * accumulatedRate
+</code></pre>
+<h3 id="coin-debt-and-zai-dynamics"><a class="header" href="#coin-debt-and-zai-dynamics">COIN, DEBT, and ZAI Dynamics</a></h3>
+<p>In this system, COINs and DEBT function similarly to matter and antimatter, created and annulled in pairs. The ZAI token acts as the ERC20 counterpart of a COIN when it's outside the system, maintaining a redeemable 1:1 ratio. The system enables users to lock COINs to mint ZAI or burn ZAI to unlock COINs, making them operable within the framework.</p>
+<p>DEBT, when unsecured, can be nullified using COINs on a 1:1 basis. However, within SAFEs, the relationship between <code>generatedDebt</code> and generated COINs diverges from the 1:1 ratio.</p>
+<h3 id="interest-accumulation"><a class="header" href="#interest-accumulation">Interest Accumulation</a></h3>
+<p>The "accumulated rate" represents the constantly accumulating interest or fees on the outstanding ZAI-generated debt. Calculated over time, it's based on the amount of ZAI minted and the applicable stability fee rate. This ensures that the debt owed by users evolves due to the ongoing addition of the stability fee. Whenever a user mints or repays ZAI, the formula for <code>generatedDebt</code> is:</p>
+<pre><code>coinAmount = generatedDebt * accumulatedRate
+</code></pre>
+<p>Here, <code>coinAmount</code> is the number of coins the user wishes to mint or burn, and <code>accumulatedRate</code> is the relevant collateral's accumulated interest rate. The <code>coinAmount</code> could also be a negative figure, indicating debt dissolution.</p>
+<blockquote>
+<p><strong>Example</strong>: Assume a 10% annual interest rate on collateral TKN.</p>
+<p>Initially, the <code>accumulatedRate</code> is 1. When Alice mints 100 ZAI tokens (COINs) from the SAFE Engine, her resulting debt is <code>100 * 1 = 100</code>.</p>
+<p>After one year, Alice repays her 100 debt. Now, the <code>accumulatedRate</code> stands at 1.1, requiring Alice to repay <code>100 * 1.1 = 110</code> ZAI tokens.</p>
+<p>Concurrently, Bob mints 100 ZAI, resulting in a (<code>100 / 1.1</code>) <code>90.9</code> debt.</p>
+<p>By year two, the <code>accumulatedRate</code> becomes 1.21. To repay his debt, Bob needs <code>90.9 * 1.21 = 110</code> ZAI tokens, identical to Alice's amount.</p>
+<p><strong>Note</strong>: Negative interest rates could technically be implemented using the same mechanics.</p>
+</blockquote>
+<p>Whenever the system refreshes the <code>accumulatedRate</code>, it leads to a surplus of COINs that get allocated to an unspecified address. This surplus emerges from the <code>updateAccumulatedRate</code> function, invoked by the Tax Collector. Importantly, these additional COINs are not directly extracted from any SAFE; instead, they manifest as a simultaneous debt increment for all SAFEs holding the taxed collateral type.</p>
+<h3 id="transfer-collateral-and-coins-events"><a class="header" href="#transfer-collateral-and-coins-events">Transfer Collateral and Coins events</a></h3>
+<p>Since the transfer of collateral and coins is handled by the SAFE Engine, the events <code>TransferCollateral</code> and <code>TransferInternalCoins</code> are emitted by the SAFE Engine, and not by the ERC20 contracts. The events emitted by the SAFE Engine try to follow the same structure as the ERC20 events, but with the addition of the collateral type identifier in the <code>TransferCollateral</code> event.</p>
+<p><strong>Generating Debt and minting ZAI</strong>:</p>
+<ul>
+<li>Lock collateral in a SAFE:
+<ul>
+<li>Deposit TKN: <code>TransferCollateral(TKN, source, ACCOUNT, amount)</code></li>
+<li>Lock TKN:
+<ul>
+<li><code>TransferCollateral(TKN, ACCOUNT, 0, amount)</code></li>
+<li><code>TransferCollateral(TKN, 0, SAFE, amount)</code></li>
+</ul>
+</li>
+<li>Generate DEBT: <code>TransferInternalCoins(0, ACCOUNT, amount)</code></li>
+<li>Mint ZAI:
+<ul>
+<li><code>TransferInternalCoins(ACCOUNT, COIN_JOIN, amount)</code></li>
+<li><code>ERC20.Transfer(0, destination, amount)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-gotchas"><a class="header" href="#4-gotchas">4. Gotchas</a></h2>
+<h3 id="permissioned-vs-authorized"><a class="header" href="#permissioned-vs-authorized">Permissioned vs Authorized</a></h3>
+<p>Authorized accounts are addresses allowed to call SAFE Engine <code>isAuthorized</code> methods. While a SAFE can add approval to an account, which gives permission to the account to modify the SAFE's state (on <code>isSAFEAllowed</code> methods), this account is not authorized to call SAFE Engine authorized methods (<code>isAuthorized</code>).</p>
+<h3 id="safe-state-vs-coin-and-debt"><a class="header" href="#safe-state-vs-coin-and-debt">SAFE State vs COIN and DEBT</a></h3>
+<p>The <code>generatedDebt</code> and <code>lockedCollateral</code> of a SAFE is measured in WAD units, while the COINs and DEBT (that gets limited, for example, by the debt ceilings) are measured in RAD units.</p>
+<blockquote>
+<p><strong>Notice</strong>: The reason for this is that the resultant <code>COIN|DEBT</code> is calculated by:</p>
+<pre><code>generatedDebt[WAD] * accumulatedRate[RAY] = COIN|DEBT[RAD]
+</code></pre>
+</blockquote>
+<h3 id="collateral-balance-vs-locked-collateral"><a class="header" href="#collateral-balance-vs-locked-collateral">Collateral Balance vs Locked Collateral</a></h3>
+<p>As stated before, an ACCOUNT can have collateral balance, and an account's SAFE can have locked collateral. The difference between these two is that the collateral balance is the amount of collateral that the user has available to use (transfer or withdraw), and the locked collateral is the amount of collateral that the user has locked in a SAFE, that the user would need to modify the SAFE collateralization in order to use.</p>
+<h3 id="unbacked-debt-and-debt-settlement"><a class="header" href="#unbacked-debt-and-debt-settlement">Unbacked Debt and Debt Settlement</a></h3>
+<p>Unbacked debt, or debt that is accounted to an ACCOUNT (not a SAFE with locked collateral) is only generated to contracts of the protocol. This debt can only be settled by having an equal an equal amount of COINs in the ACCOUNT's balance, and calling <code>settleDebt</code> with the amount of DEBT/COINs to destroy.</p>
+<p>This debt is only generated when a SAFE gets liquidated, a portion of the SAFE's collateral is transferred to the Collateral Auction House, the SAFE's debt is transferred to the Accounting Engine (unbacked). The Auction House will the transfer COINs to the Accounting Engine in order for the debt to be settled.</p>
+<h3 id="confiscation-of-collateral-and-debt"><a class="header" href="#confiscation-of-collateral-and-debt">Confiscation of Collateral and Debt</a></h3>
+<p>An authorized account may call <code>confiscateSAFECollateralAndDebt</code> to confiscate the locked collateral and/or debt of a SAFE. This method does not perform any checks on the SAFE's state. The flow of value is inversed when it happens during liquidations, than when the system is under global settlement. This means that this method is always authorized to arbitrarily modify the SAFE's state (and the DEBT balance of an account), even after the system was shutdown.</p>
+<!-- TODO: mv to proxy section
+### Proxy Accounts (SAFE Manager)
+In orther to facilitate the management of SAFEs, the protocol incorporates a SAFE Manager contract allowing a same user to control multiple SAFEs with the same collateral type. This interaction is done through an ownable proxy contract, and a SAFE Handler.
+
+- The user's Proxy
+    - has an account in the SAFE Engine (can hold collateral and coins).
+    - can create a new SAFE (deploying a new SAFE Handler) identified by an #ID (autoincremental).
+    - is the owner (in the SAFE Manager) of the SAFE that's identified by the SAFE Handler.
+- The SAFE Handler
+    - account that authorizes the SAFE Manager (in the SAFE Engine) to modify the SAFE in its behalf.
+    - has no other functionality.
+- To deposit/withdraw collateral, the tokens are transferred from/to the user's Proxy account to/from the SAFE Handler's SAFE.
+- To generate/repay debt, the coins are transferred from/to the user's Proxy account to/from the SAFE Handler's SAFE.
+
+**Notice**: Regular users may find that their `coinBalance` (in their proxy address) is usually `0` (or close to), as proxy interactions are designed to always use the `coinBalance` to mint ZAI and transfer the ERC20 to the user's address.
+-->
+<h2 id="5-failure-modes"><a class="header" href="#5-failure-modes">5. Failure Modes</a></h2>
+<h3 id="parameters-misconfiguration"><a class="header" href="#parameters-misconfiguration">Parameters misconfiguration</a></h3>
+<ul>
+<li>Low <code>globalDebtCeiling</code> may limit user borrowing.</li>
+<li>High <code>globalDebtCeiling</code> risks debt overload.</li>
+<li>Low <code>safeDebtCeiling</code> hampers individual borrowing.</li>
+<li><code>safeDebtCeiling</code> above <code>globalDebtCeiling</code> is likely moot.</li>
+<li>Low <code>cType.debtCeiling</code> curbs borrowing for specific collateral.</li>
+<li><code>cType.debtCeiling</code> above <code>globalDebtCeiling</code> is typically irrelevant.</li>
+<li>Low <code>cType.debtFloor</code> raises liquidation risks.</li>
+<li>High <code>cType.debtFloor</code> deters small borrowers.</li>
+</ul>
+<h3 id="liquidation-mechanics"><a class="header" href="#liquidation-mechanics">Liquidation mechanics</a></h3>
+<p>Despite the fact that the SAFE Engine holds the latest collateral prices and SAFE state, the liquidation of a SAFE is handled by the Liquidation Engine. The Liquidation Engine is authorized to call <code>confiscateSAFECollateralAndDebt</code>, which doesn't perform healthy checks, and allows it to modify the SAFE's state in an arbitrary way. If the Liquidation Engine (or any authorized address) is misconfigured, it may result in the liquidation of SAFEs that are not unsafe, or malicious modifications to any SAFE's state.</p>
+<h3 id="accumulated-rate-and-collateral-prices"><a class="header" href="#accumulated-rate-and-collateral-prices">Accumulated Rate and Collateral Prices</a></h3>
+<p>Both the <code>updateAccumulatedRate</code> and <code>updateCollateralPrice</code> are authorized methods that perform no further checks in the validity of the parameters passed. If the Oracle Relayer or the Tax Collector (or any other authorized address) are misconfigured, it may result in the <code>accumulatedRate</code> or <code>safetyPrice</code> being set to an arbitrary value.</p>
+<p>If the <code>accumulatedRate</code> for a given collateral type is set to <code>0</code>, the collateral type may be bricked beyond repair, as the <code>accumulatedRate</code> is iteratively calculated by multiplying the previous value to a multiplier.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="accounting-engine"><a class="header" href="#accounting-engine">Accounting Engine</a></h1>
+<p>See <a href="detailed/modules//src/contracts/AccountingEngine.sol/contract.AccountingEngine.html">AccountingEngine.sol</a> for more details.</p>
+<h2 id="1-introduction-1"><a class="header" href="#1-introduction-1">1. Introduction</a></h2>
+<p>The Accounting Engine serves as the system's financial management hub, overseeing tasks such as:</p>
+<ul>
+<li>Tracking system surplus and deficit.</li>
+<li>Managing system debt through auctions.</li>
+<li>Dealing with system surplus via auctions or transfers.</li>
+<li>Accepting COINs (for instance, from auctions) and using them to offset DEBT.</li>
+</ul>
+<h2 id="2-contract-details-1"><a class="header" href="#2-contract-details-1">2. Contract Details</a></h2>
+<h3 id="key-methods-1"><a class="header" href="#key-methods-1">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>popDebtFromQueue</code>: Removes a certain amount of debt from the time-sensitive queue after the <code>popDebtDelay</code> duration has elapsed, for either settlement or auction.</li>
+<li><code>settleDebt</code>: Utilizes coin balance to settle debt.</li>
+<li><code>cancelAuctionedDebtWithSurplus</code>: Utilizes coins to settle debt that's in the queue.</li>
+<li><code>auctionDebt</code>: Triggers an auction to liquidate portions of unsettled debt.</li>
+<li><code>auctionSurplus</code>: Triggers an auction to liquidate surplus once all debt has been settled.</li>
+<li><code>transferExtraSurplus</code>: Allocates (instead of auctioning it) excess surplus following debt settlement.</li>
+<li><code>transferPostSettlementSurplus</code>: Allocates all remaining surplus when a Global Settlement event occurs.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>pushDebtToQueue</code>: Adds a specified amount of debt to a time-sensitive queue.</li>
+<li><code>disableContract</code>: Deactivates both Debt and Surplus Auction Houses, clears as much debt as possible, and transfers (after <code>disableCooldown</code> delay) any leftover surplus to a designated drain address.</li>
+</ul>
+<h3 id="required-authorities-1"><a class="header" href="#required-authorities-1">Required Authorities:</a></h3>
+<ul>
+<li><strong>LiquidationEngine</strong>: needs authorization to call <code>pushDebtToQueue</code>.</li>
+<li><strong>Debt Auction House</strong>: needs authorization to call <code>cancelAuctionedDebtWithSurplus</code>.</li>
+<li><strong>Surplus Auction House</strong>: needs approval to modify the contract's state in the SAFE Engine.</li>
+<li><strong>Global Settlement</strong>: needs authorization to call <code>disableContract</code>.</li>
+</ul>
+<h3 id="contract-parameters-1"><a class="header" href="#contract-parameters-1">Contract Parameters:</a></h3>
+<p><strong>Global</strong></p>
+<ul>
+<li><strong>SAFE Engine</strong>: Holds the coin and debt balance, is called to settle debt.</li>
+<li><strong>Surplus Auction House</strong>: Is called to start surplus auctions.</li>
+<li><strong>Debt Auction House</strong>: Is called to start debt auctions.</li>
+<li><code>postSettlementSurplusDrain</code>: Address to which surplus is sent following Global Settlement.</li>
+<li><code>surplusIsTransferred</code>: Whether the surplus should be either auctioned off or transferred.</li>
+<li><code>surplusDelay</code>: Time lag before the surplus becomes eligible for either auction or transfer.</li>
+<li><code>popDebtDelay</code>: Time interval after which debt can be popped from the time-sensitive queue.</li>
+<li><code>disableCooldown</code>: The waiting period following Global Settlement, after which any remaining surplus should be transferred.</li>
+<li><code>surplusAmount</code>: Amount of surplus eligible for auction or transfer during each operation.</li>
+<li><code>surplusBuffer</code>: Minimum surplus reserve to be maintained in the contract following an auction or transfer.</li>
+<li><code>debtAuctionMintedTokens</code>: Initial quantity of Protocol Tokens offered for minting in debt auctions.</li>
+<li><code>debtAuctionBidSize</code>: Chunk of debt that can be offered in each individual debt auction.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-1"><a class="header" href="#3-key-mechanisms--concepts-1">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="queued-debt-on-auction-debt--unqueued-unauctioned-debt"><a class="header" href="#queued-debt-on-auction-debt--unqueued-unauctioned-debt">Queued Debt, On Auction Debt &amp; Unqueued Unauctioned Debt</a></h3>
+<p>Within the SAFE Engine's scope, the Accounting Engine maintains a single debt balance associated with the contract address. This balance is the summation of three components: the queued debt, representing debt in line for auctioning; the unqueued debt, which is currently being auctioned; and the remaining debt not undergoing auction at the moment.</p>
+<p>The unqueued-unauctioned debt can be calculated as follows:</p>
+<pre><code>unqueuedUnauctionedDebt = debtBalance - queuedDebt - onAuctionDebt
+</code></pre>
+<p>Once the <code>unqueuedUnauctionedDebt</code> debt reaches the specified <code>debtAuctionBidSize</code> threshold and the cooldown period elapses, a debt auction is initiated. During this process, the overall debt of the contract remains unchanged, but the <code>onAuctionDebt</code> metric increases as the debt enters the auction phase. Simultaneously, the calculation for <code>unqueuedUnauctionedDebt</code> decreases as the debt undergoing auction is accounted for.</p>
+<h2 id="4-gotchas-1"><a class="header" href="#4-gotchas-1">4. Gotchas</a></h2>
+<h3 id="unqueued-unauctioned-debt-underflow"><a class="header" href="#unqueued-unauctioned-debt-underflow">Unqueued Unauctioned Debt underflow</a></h3>
+<p>The <code>queuedDebt</code> is modified through the <code>pushDebtToQueue</code> (authorized) and <code>popDebtFromQueue</code> (public) methods. They don't exclusively mirror the <code>debtBalance</code> recorded in the SAFE Engine. If an authorized contract uses <code>pushDebtToQueue</code> without transferring debt to the Accounting Engine, it could lead to an underflow issue (if <code>queuedDebt</code> exceeds <code>debtBalance</code>). This situation could potentially disrupt the contract's ability to auction debt as the <code>unqueuedUnauctionedDebt</code> calculation might underflow and revert.</p>
+<h2 id="5-failure-modes-1"><a class="header" href="#5-failure-modes-1">5. Failure Modes</a></h2>
+<h3 id="parameters-misconfiguration-1"><a class="header" href="#parameters-misconfiguration-1">Parameters misconfiguration</a></h3>
+<ul>
+<li>High <code>surplusDelay</code> slows surplus actions.</li>
+<li>Low <code>surplusDelay</code> rushes surplus auctions.</li>
+<li>High <code>popDebtDelay</code> delays debt auctions.</li>
+<li>Low <code>popDebtDelay</code> risks double debt coverage.</li>
+<li>High <code>surplusAmount</code> risks unfilled surplus auctions.</li>
+<li>Low <code>surplusAmount</code> hampers surplus actions.</li>
+<li>High <code>surplusBuffer</code> blocks surplus auctions.</li>
+<li>Low <code>surplusBuffer</code> risks uncovered new debt.</li>
+<li>High <code>debtAuctionMintedTokens</code> dilutes protocol tokens.</li>
+<li>Low <code>debtAuctionMintedTokens</code> risks failed debt auctions.</li>
+<li>High <code>debtAuctionBidSize</code> risks unfilled debt auctions.</li>
+<li>Low <code>debtAuctionBidSize</code> slows debt auctions.</li>
+<li>Low <code>shutdownCooldown</code> risks premature surplus moves.</li>
+<li>High <code>shutdownCooldown</code> delays post-shutdown surplus actions.</li>
+</ul>
+<h3 id="post-settlement-surplus-drain-misconfiguration"><a class="header" href="#post-settlement-surplus-drain-misconfiguration">Post Settlement Surplus Drain misconfiguration</a></h3>
+<p>The <code>postSettlementSurplusDrain</code> address should be configured after the system is deployed. It's permissible to leave it unset, but doing so comes with implications: if Global Settlement is activated while this address is not specified, any surplus remaining after the settlement won't be drained. Instead, this surplus can only be used for debt elimination. It's worth noting that once Global Settlement is triggered, the address for <code>postSettlementSurplusDrain</code> becomes immutable and can't be changed.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="liquidation-engine"><a class="header" href="#liquidation-engine">Liquidation Engine</a></h1>
+<p>See <a href="detailed/modules//src/contracts/LiquidationEngine.sol/contract.LiquidationEngine.html">LiquidationEngine.sol</a> for more details.</p>
+<h2 id="1-introduction-2"><a class="header" href="#1-introduction-2">1. Introduction</a></h2>
+<p>The Liquidation Engine is the component responsible for managing the liquidation processes of SAFEs. Its primary duties include:</p>
+<ul>
+<li>Determining the liquidation status of a SAFE.</li>
+<li>Initiating a SAFE Saviour action to enhance the SAFE's financial health, if applicable.</li>
+<li>Assessing the amount of collateral required to be confiscated from a SAFE to offset its debt.</li>
+<li>Activating the process to seize collateral from a SAFE.</li>
+<li>Initiating collateral auctions.</li>
+</ul>
+<h2 id="2-contract-details-2"><a class="header" href="#2-contract-details-2">2. Contract Details</a></h2>
+<h3 id="key-functions"><a class="header" href="#key-functions">Key Functions:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>liquidateSAFE</code>: Evaluates the condition of a SAFE and commences the liquidation process if the SAFE is eligible for liquidation (and if SAFE Saviour intervention fails).</li>
+</ul>
+<p><strong>Permissioned</strong></p>
+<ul>
+<li><code>protectSAFE</code>: Selects a SAFE Saviour to defend a SAFE against liquidation.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>connectSAFESaviour</code>: Permits a SAFE Saviour contract to associate with a SAFE for the purpose of preventing its liquidation.</li>
+<li><code>disconnectSAFESaviour</code>: Revokes permission for a SAFE Saviour contract to be linked to SAFEs.</li>
+<li><code>removeCoinsFromAuction</code>: Adjusts the accounted amount of coins that are currently under auction.</li>
+</ul>
+<h3 id="required-authorities-2"><a class="header" href="#required-authorities-2">Required Authorities:</a></h3>
+<ul>
+<li><strong>Collateral Auction Houses</strong>: need authorization to call <code>removeCoinsFromAuction</code>.</li>
+<li><strong>Global Settlement</strong>: needs authorization to call <code>disableContract</code> (and block further liquidations).</li>
+</ul>
+<h3 id="contract-parameters-2"><a class="header" href="#contract-parameters-2">Contract Parameters:</a></h3>
+<p><strong>Global</strong></p>
+<ul>
+<li><strong>SAFE Engine</strong>: Holds the SAFE state, is called to confiscate the SAFE collateral and debt.</li>
+<li><strong>Accounting Engine</strong>: The confiscated debt is transferred to the Accounting Engine balance, and pushed to its queue to be auctioned.</li>
+<li><code>onAuctionSystemCoinLimit</code>: Maximum amount of system coins that can be simultaneously auctioned.</li>
+</ul>
+<p><strong>Per Collateral Type</strong></p>
+<ul>
+<li><strong>Collateral Auction House</strong>: Is called to start collateral auctions.</li>
+<li><code>liquidationPenalty</code>: Penalty applied to the debt of the SAFE that is being liquidated. This penalty represents an excess in the amount of debt that the collateral auction needs to cover.</li>
+<li><code>liquidationQuantity</code>: Max amount of debt that can be liquidated in each liquidation.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-2"><a class="header" href="#3-key-mechanisms--concepts-2">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="liquidation-penalty"><a class="header" href="#liquidation-penalty">Liquidation Penalty</a></h3>
+<p>If a SAFE is subject to liquidation carrying a specific debt amount, the Liquidation Engine initiates a collateral auction. The target debt to be covered in the auction is determined by the following equation:</p>
+<pre><code>debtToAuction = debtToCover * liquidationPenalty
+</code></pre>
+<blockquote>
+<p><strong>Example</strong>: Alice has a SAFE with 1000 TKN locked and a 500 COINs debt. The TKN price drops, and Alice's SAFE gets liquidated. The liquidation penalty is <code>1.1</code>, so the collateral auction will auction off Alice's 1000 TKNs, to try to cover 550 COINs of debt.</p>
+</blockquote>
+<h3 id="liquidation-quantity"><a class="header" href="#liquidation-quantity">Liquidation Quantity</a></h3>
+<p>The quantity of collateral and debt seized from a SAFE during liquidation is decided based on the following criteria:</p>
+<ul>
+<li>If the SAFE's debt is smaller than <code>liquidationQuantity</code>, the SAFE undergoes full liquidation.</li>
+<li>If the SAFE's debt surpasses <code>liquidationQuantity</code>, the SAFE is only partially liquidated, and residual debt remains.</li>
+<li>If the SAFE's outstanding debt crosses the <code>onAuctionSystemCoinLimit</code>, partial liquidation occurs, and any remaining debt stays in the SAFE.</li>
+<li>In cases of partial liquidation, a corresponding slice of collateral is seized, leaving the remaining collateral intact within the SAFE.</li>
+</ul>
+<h3 id="safe-saviours"><a class="header" href="#safe-saviours">SAFE Saviours</a></h3>
+<p>These are smart contracts authorized to intervene on a user's behalf to improve the SAFE's financial condition and prevent liquidation. To become operational, SAFE Saviour contracts must receive authorization and must be chosen by each individual user.</p>
+<h2 id="4-gotchas-2"><a class="header" href="#4-gotchas-2">4. Gotchas</a></h2>
+<h3 id="system-coin-limit"><a class="header" href="#system-coin-limit">System Coin Limit</a></h3>
+<p>This parameter establishes a shared upper limit for the total quantity of coins—equivalent to debt—that can be simultaneously auctioned for all kinds of collateral. Once this collective cap is reached, no additional debt auctions can occur, regardless of the type of collateral in question.</p>
+<p>Reaching this ceiling can set off a chain reaction of consequences. For example, if a specific collateral type is unusually volatile and maxes out the debt limit through numerous auctions, it could essentially monopolize the available auction capacity, preventing other types of collateral from being auctioned. Furthermore, reaching this ceiling can freeze all new collateral auctions, affecting the liquidity and stability of the system until remedial actions are taken.</p>
+<p>Therefore, it's vital for both users and system administrators to closely monitor how near the system is to hitting the <code>onAuctionSystemCoinLimit</code>. Breaching this limit could disrupt a wide range of operations.</p>
+<blockquote>
+<p><strong>Notice</strong>: The <code>onAuctionSystemCoinLimit</code> is a number with RAD precision.</p>
+</blockquote>
+<h2 id="5-failure-modes-2"><a class="header" href="#5-failure-modes-2">5. Failure Modes</a></h2>
+<h3 id="parameters-misconfiguration-2"><a class="header" href="#parameters-misconfiguration-2">Parameters misconfiguration:</a></h3>
+<ul>
+<li>High <code>onAuctionSystemCoinLimit</code> risks mass collateral liquidation.</li>
+<li>Low <code>onAuctionSystemCoinLimit</code> slows SAFE liquidations.</li>
+<li>High <code>liquidationPenalty</code> amplifies user losses.</li>
+<li>Low <code>liquidationPenalty</code> encourages overleveraging.</li>
+<li>High <code>liquidationQuantity</code> favors full SAFE liquidations.</li>
+<li>Low <code>liquidationQuantity</code> makes small auctions gas-inefficient.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="oracle-relayer"><a class="header" href="#oracle-relayer">Oracle Relayer</a></h1>
+<p>See <a href="detailed/modules//src/contracts/OracleRelayer.sol/contract.OracleRelayer.html">OracleRelayer.sol</a> for more details.</p>
+<h2 id="1-introduction-3"><a class="header" href="#1-introduction-3">1. Introduction</a></h2>
+<p>The Oracle Relayer is the module that handles the quoting mechanism of the system. It is responsible for the following:</p>
+<ul>
+<li>Storing the oracles addresses for each collateral type.</li>
+<li>Fetching and updating the price of the collateral types.</li>
+<li>Updating the redemption price, given the redemption rate.</li>
+</ul>
+<h2 id="2-contract-details-3"><a class="header" href="#2-contract-details-3">2. Contract Details</a></h2>
+<h3 id="key-methods-2"><a class="header" href="#key-methods-2">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>marketPrice</code>: Gets the market price of the system coin.</li>
+<li><code>redemptionPrice</code>: Gets and updates the redemption price.</li>
+<li><code>calcRedemptionPrice</code>: View method that calculates (but does not update) the current redemption price.</li>
+<li><code>updateCollateralPrice</code>: Fetchs the price of a collateral type, updates the redemption price, calculates the safety and liquidation prices, and updates them in the SAFE Engine.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>updateRedemptionRate</code>: Updates the redemption rate.</li>
+</ul>
+<h3 id="required-authorities-3"><a class="header" href="#required-authorities-3">Required Authorities:</a></h3>
+<ul>
+<li><strong>PID Rate Setter</strong>: needs authorization to call <code>updateRedemptionRate</code>.</li>
+</ul>
+<h3 id="contract-parameters-3"><a class="header" href="#contract-parameters-3">Contract Parameters:</a></h3>
+<p><strong>Global</strong></p>
+<ul>
+<li><strong>SAFE Engine</strong>: Is called to update the collateral prices on it.</li>
+<li><strong>System Coin Oracle</strong>: Is queried to fetch the market price of the system coin.</li>
+<li><code>redemptionRateLowerBound</code>: Lower bound of the redemption rate.</li>
+<li><code>redemptionRateUpperBound</code>: Upper bound of the redemption rate.</li>
+</ul>
+<p><strong>Per Collateral Type</strong></p>
+<ul>
+<li><strong>Oracle</strong>: Is queried to fetch the price of the collateral type.</li>
+<li><code>safetyCRatio</code>: Ratio applied to the collateral price to define the safety price.</li>
+<li><code>liquidationCRatio</code>: Ratio applied to the collateral price to define the liquidation price.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-3"><a class="header" href="#3-key-mechanisms--concepts-3">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="quoting-mechanism"><a class="header" href="#quoting-mechanism">Quoting Mechanism</a></h3>
+<p>Each collateral type needs to have an associated oracle that quotes the collateral in terms of the denomination currency (in ZAI, US Dollars). The System Coin Oracle needs to be also denominated in the same currency.</p>
+<p>The Oracle Relayer handles the quoting mechanism, in which collateral types are quoted in terms of ZAI, applying a variable rate to ZAI price. The collateral price is calculated as follows:</p>
+<pre><code>collateralPrice = oraclePrice / redemptionPrice
+</code></pre>
+<h3 id="c-ratios"><a class="header" href="#c-ratios">C Ratios</a></h3>
+<p>Safety and liquidation prices are calculated by applying a ratio to the collateral price. The safety price is calculated as follows:</p>
+<pre><code>safetyPrice = collateralPrice * safetyCRatio
+liquidationPrice = collateralPrice * liquidationCRatio
+</code></pre>
+<p>The safety price is the price at which the SAFE is considered safe, a user may modify the SAFE collateralization as long as the resulting state is above the safety price.</p>
+<p>The liquidation price is the price at which the SAFE is considered liquidatable, and the SAFE may be liquidated.</p>
+<h2 id="4-gotchas-3"><a class="header" href="#4-gotchas-3">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-3"><a class="header" href="#5-failure-modes-3">5. Failure Modes</a></h2>
+<h3 id="parameters-misconfiguration-3"><a class="header" href="#parameters-misconfiguration-3">Parameters misconfiguration:</a></h3>
+<ul>
+<li>High <code>safetyCRatio</code> limits SAFE modifications.</li>
+<li><code>safetyCRatio</code> near <code>liquidationCRatio</code> makes it redundant.</li>
+<li>High <code>liquidationCRatio</code> may cause needless liquidations.</li>
+<li>Low <code>liquidationCRatio</code> encourages overleveraging.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tax-collector"><a class="header" href="#tax-collector">Tax Collector</a></h1>
+<p>See <a href="detailed/modules//src/contracts/TaxCollector.sol/contract.TaxCollector.html">TaxCollector.sol</a> for more details.</p>
+<h2 id="1-introduction-4"><a class="header" href="#1-introduction-4">1. Introduction</a></h2>
+<p>The Tax Collector is the module that handles the collection of taxes. It is responsible for the following:</p>
+<ul>
+<li>Storing the interest rate for each collateral type.</li>
+<li>Storing the tax revenue receivers.</li>
+<li>Calculating and distributing the tax revenue.</li>
+</ul>
+<h2 id="2-contract-details-4"><a class="header" href="#2-contract-details-4">2. Contract Details</a></h2>
+<h3 id="key-methods-3"><a class="header" href="#key-methods-3">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>taxSingle</code>: Calculates and distributes the tax revenue for a single collateral type.</li>
+<li><code>taxMany</code>: Calculates and distributes the tax revenue for a set of collateral types.</li>
+</ul>
+<h3 id="contract-parameters-4"><a class="header" href="#contract-parameters-4">Contract Parameters:</a></h3>
+<p><strong>Global</strong></p>
+<ul>
+<li><strong>SAFE Engine</strong>: Is called to update the accumulated rate for each collateral type.</li>
+<li><strong>Primary Tax Receiver</strong>: Receives tax revenue for all collateral types.</li>
+<li><code>globalStabilityFee</code>: Global stability fee applied to all collateral types.</li>
+<li><code>maxStabilityFeeRange</code>: Maximum range for the stability fee to differ from 1 (no fee).</li>
+</ul>
+<p><strong>Per Collateral Type</strong></p>
+<ul>
+<li><strong>Secondary Tax Receivers</strong>: Addresses (and tax percentage) that receive revenue for the collateral type total stability fees.</li>
+<li><code>stabilityFee</code>: Stability fee applied only to the collateral type.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-4"><a class="header" href="#3-key-mechanisms--concepts-4">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="primary-and-secondary-tax-receivers"><a class="header" href="#primary-and-secondary-tax-receivers">Primary and Secondary Tax Receivers</a></h3>
+<p>The contract holds 2 types of tax receivers:</p>
+<ul>
+<li><strong>Primary Tax Receiver</strong>: Is a shared address across all the collateral types. It receives the remaining tax revenue after the secondary tax receivers have been paid.</li>
+<li><strong>Secondary Tax Receivers</strong>: Is a set of addresses per collateral type, that can be set to receive a fixed percentage amount of the tax revenue of the collateral type.</li>
+</ul>
+<h3 id="global-and-per-collateral-stability-fees"><a class="header" href="#global-and-per-collateral-stability-fees">Global and Per Collateral Stability Fees</a></h3>
+<p>The tax (or Stability Fee) can be configured in 2 ways:</p>
+<ul>
+<li><strong>Global Stability Fee</strong>: Shared across all the collateral types.</li>
+<li><strong>Per Collateral Stability Fee</strong>: Set for each collateral type.</li>
+</ul>
+<p>The final stability fee computed for a collateral type is the multiplication of both fees. To avoid retroactivity, the tax collecting routine first reads the previously stored stability fee, and then calculates and stores the new one.</p>
+<h2 id="4-gotchas-4"><a class="header" href="#4-gotchas-4">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-4"><a class="header" href="#5-failure-modes-4">5. Failure Modes</a></h2>
+<h3 id="parameters-misconfiguration-4"><a class="header" href="#parameters-misconfiguration-4">Parameters misconfiguration:</a></h3>
+<ul>
+<li><code>maxStabilityFeeRange</code> too high may result in a bad calculation of the stability fee, resulting in broken collateral types (as their accumulated rate will be too low/high).</li>
+<li><code>maxStabilityFeeRange</code> too low may result in a bounded value for the stability fee, bounding the final stability fee to a value very similar to 1 (no stability fee).</li>
+<li><code>maxSecondaryTaxReceivers</code> too low may result in not being able to add a secondary tax receiver to a collateral type.</li>
+<li>Stability fees (<code>global * perCollateral</code>) too high may result in users not interested in generating debt.</li>
+<li>Stability fees too low may result in the protocol not being able to generate enough revenue to cover the system expenses.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pid-controller"><a class="header" href="#pid-controller">PID Controller</a></h1>
+<p>See <a href="detailed/modules//src/contracts/PIDController.sol/contract.PIDController.html">PIDController.sol</a> and <a href="detailed/modules//src/contracts/PIDRateSetter.sol/contract.PIDRateSetter.html">PIDRateSetter.sol</a> for more details.</p>
+<h2 id="1-introduction-5"><a class="header" href="#1-introduction-5">1. Introduction</a></h2>
+<p>The PID Controller is a smart contract that fine-tunes the system's redemption rate by analyzing the <code>deviation</code>, which is the discrepancy between the market and redemption prices. It performs the following tasks:</p>
+<ul>
+<li>Computes and stores the system's proportional and integral deviations.</li>
+<li>Applies a decay factor to the integral deviation.</li>
+<li>Adjusts the redemption rate by applying proportional and integral gains to the deviation.</li>
+</ul>
+<p>The PID Rate Setter schedules and triggers the PID Controller's redemption rate adjustments.</p>
+<h2 id="2-contract-details-5"><a class="header" href="#2-contract-details-5">2. Contract Details</a></h2>
+<h3 id="21-pid-controller"><a class="header" href="#21-pid-controller">2.1 PID Controller</a></h3>
+<h3 id="key-methods-4"><a class="header" href="#key-methods-4">Key Methods:</a></h3>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>computeRate</code>: Computes the new redemption rate, applying the proportional and integral gains to the deviation (can only be called by the PID Rate Setter contract).</li>
+</ul>
+<h3 id="contract-parameters-5"><a class="header" href="#contract-parameters-5">Contract Parameters:</a></h3>
+<ul>
+<li><strong>Seed Proposer</strong>: Authorized address for initiating redemption rate updates.</li>
+<li><code>integralPeriodSize</code>: Minimum duration required to calculate integral deviation.</li>
+<li><code>perSecondCumulativeLeak</code>: Decay constant for the integral deviation.</li>
+<li><code>noiseBarrier</code>: Lowest deviation percentage considered for redemption rate adjustment.</li>
+<li><code>feedbackOutputUpperBound</code>: Maximum limit for the redemption rate.</li>
+<li><code>feedbackOutputLowerBound</code>: Minimum limit for the redemption rate.</li>
+<li><code>proportionalGain</code>: Gain factor for proportional deviation.</li>
+<li><code>integralGain</code>: Gain factor for integral deviation.</li>
+</ul>
+<h3 id="22-pid-rate-setter"><a class="header" href="#22-pid-rate-setter">2.2 PID Rate Setter</a></h3>
+<h3 id="key-methods-5"><a class="header" href="#key-methods-5">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>updateRate</code>: Retrieves market and redemption prices from the Oracle Relayer and prompts the PID Controller to compute the new redemption rate.</li>
+</ul>
+<h3 id="contract-parameters-6"><a class="header" href="#contract-parameters-6">Contract Parameters:</a></h3>
+<ul>
+<li><code>updateRateDelay</code>: Time gap between successive redemption rate adjustments.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-5"><a class="header" href="#3-key-mechanisms--concepts-5">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="deviation-metrics"><a class="header" href="#deviation-metrics">Deviation Metrics</a></h3>
+<p>The PID Controller monitors the gap between market and redemption prices and stores both the proportional and integral deviations. Whenever the deviation changes, its integral component is decayed to mitigate the impact of historical deviations on future rates.</p>
+<h4 id="proportional-deviation-pterm"><a class="header" href="#proportional-deviation-pterm">Proportional Deviation (<code>pTerm</code>)</a></h4>
+<p>It is computed as:</p>
+<pre><code>pTerm = (redemptionPrice - marketPrice) / redemptionPrice
+</code></pre>
+<h4 id="integral-deviation-iterm"><a class="header" href="#integral-deviation-iterm">Integral Deviation (<code>iTerm</code>)</a></h4>
+<p>It is calculated iteratively:</p>
+<pre><code>iTerm_n = (iTerm_(n-1) * decayFactor) + ((pTerm_n - pTerm_(n-1)) / 2)
+</code></pre>
+<h3 id="gain-parameters"><a class="header" href="#gain-parameters">Gain Parameters</a></h3>
+<p>The system owner can configure the gain parameters for proportional (<code>pGain</code>) and integral (<code>iGain</code>) deviations. The redemption rate is then adjusted as follows:</p>
+<pre><code>redemptionRate = 1 + (pTerm * pGain + iTerm * iGain)
+</code></pre>
+<p><strong>Notice</strong>: All of pTerm, iTerm, pGain, iGain can be negative, so the redemption rate can be lesser than 1 (decrease the rate). Yet the redemption rate can never be 0 or negative.</p>
+<h2 id="4-gotchas-5"><a class="header" href="#4-gotchas-5">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-5"><a class="header" href="#5-failure-modes-5">5. Failure Modes</a></h2>
+<ul>
+<li>Invalid <code>seedProposer</code> risks stale redemption rate.</li>
+<li>High <code>noiseBarrier</code> hampers redemption rate adjustment.</li>
+<li>High <code>integralPeriodSize</code> lowers PID responsiveness.</li>
+<li>Over-the-top <code>feedbackOutputUpperBound</code> is likely disregarded.</li>
+<li>Null <code>feedbackOutputUpperBound</code> constrains positive control range.</li>
+<li>Excessive <code>feedbackOutputLowerBound</code> may be overlooked.</li>
+<li>Null <code>feedbackOutputLowerBound</code> limits negative control range.</li>
+<li>High <code>perSecondCumulativeLeak</code> quickens integral decay.</li>
+<li>Low <code>perSecondCumulativeLeak</code> amplifies integral's historical effect.</li>
+<li>High <code>kp</code> makes controller jittery to current deviations.</li>
+<li>High <code>ki</code> overemphasizes historical deviations.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stability-fee-treasury"><a class="header" href="#stability-fee-treasury">Stability Fee Treasury</a></h1>
+<p>See <a href="detailed/modules//src/contracts/StabilityFeeTreasury.sol/contract.StabilityFeeTreasury.html">StabilityFeeTreasury.sol</a> for more details.</p>
+<h2 id="1-introduction-6"><a class="header" href="#1-introduction-6">1. Introduction</a></h2>
+<p>The Stability Fee Treasury functions as a specialized contract designed for managing protocol fees that are not factored into the system's surplus or deficit calculations. Unlike locked funds, the funds within this contract remain liquid and can be flexibly utilized by the system owner. Its key responsibilities encompass:</p>
+<ul>
+<li>Facilitating the disbursement of rewards for maintenance tasks.</li>
+<li>Utilizing funds to address unbacked debt.</li>
+<li>Managing diverse payments initiated by the system owner.</li>
+<li>Replenishing the system's surplus/deficit sheets when the treasury surpasses its predefined capacity.</li>
+</ul>
+<h2 id="2-contract-details-6"><a class="header" href="#2-contract-details-6">2. Contract Details</a></h2>
+<h3 id="key-methods-6"><a class="header" href="#key-methods-6">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>settleDebt</code>: This function efficiently allocates available funds to cover unbacked debt within the treasury's accounting.</li>
+<li><code>transferSurplusFunds</code>: This operation addresses outstanding debt to the maximum extent achievable and transfers any excess funds beyond the capacity back to the system's surplus/deficit sheets.</li>
+</ul>
+<p><strong>Permissioned</strong></p>
+<ul>
+<li><code>takeFunds</code>: Enables the authorized withdrawal of funds from a consenting address to the treasury.</li>
+<li><code>pullFunds</code>: Allows an address with sufficient allowance to withdraw funds from the treasury.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>setTotalAllowance</code>: Grant an address the permission to withdraw funds from the treasury up to a specified limit.</li>
+<li><code>setPerHourAllowance</code>: Assign a per-hour withdrawal limit to an address, allowing them to pull funds from the treasury within this constraint.</li>
+<li><code>giveFunds</code>: Move funds from the treasury to a designated address.</li>
+<li><code>disableContract</code>: Swiftly transfer all available funds from the contract to a predetermined drainage address.</li>
+</ul>
+<h3 id="required-authorities-4"><a class="header" href="#required-authorities-4">Required Authorities:</a></h3>
+<ul>
+<li><strong>Global Settlement</strong>: needs authorization to call <code>disableContract</code>.</li>
+</ul>
+<h3 id="contract-parameters-7"><a class="header" href="#contract-parameters-7">Contract Parameters:</a></h3>
+<ul>
+<li><strong>SAFEEngine</strong>: Query and settle the treasury's coin and debt balance.</li>
+<li><strong>Extra Surplus Receiver</strong>: Who receives the funds that are above the treasury's capacity (usually Accounting Engine).</li>
+<li><strong>CoinJoin</strong>: Used to join ERC20 ZAI into the system.</li>
+<li><code>treasuryCapacity</code>: Maximum amount of funds that the treasury can hold (before transferring to the extra surplus receiver).</li>
+<li><code>pullFundsMinThreshold</code>: Minimum amount of funds that the treasury must hold to be able to pull funds from it.</li>
+<li><code>surplusTransferDelay</code>: Minimum delay between transfers of funds to the extra surplus receiver.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-6"><a class="header" href="#3-key-mechanisms--concepts-6">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-6"><a class="header" href="#4-gotchas-6">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-6"><a class="header" href="#5-failure-modes-6">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-auction-houses"><a class="header" href="#-auction-houses">❱ Auction Houses</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>Auction Houses are core smart contracts in the Azos Protocol that manage debt, surplus, and collateral through automated auctions. Whether you're an active participant or simply interested in ZAI's stability mechanisms, understanding these components is crucial.</p>
+<h3 id="types-of-auction-houses"><a class="header" href="#types-of-auction-houses">Types of Auction Houses</a></h3>
+<ol>
+<li><strong>Collateral Auction House</strong>: Facilitates the sale of confiscated collateral from liquidated SAFEs, aiming to cover associated debts.</li>
+<li><strong>Debt Auction House</strong>: Auctions off the system's debt, offering to mint Protocol Tokens as rewards for debt settlement.</li>
+<li><strong>Surplus Auction House</strong>: Manages system surplus, conducting auctions (Protocol Tokens buybacks) to distribute excess funds.</li>
+</ol>
+<p>Understanding these mechanisms is essential for navigating the Azos Protocol's automated balance and risk management features.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="collateral-auction-house"><a class="header" href="#collateral-auction-house">Collateral Auction House</a></h1>
+<p>See <a href="detailed/auctions//src/contracts/CollateralAuctionHouse.sol/contract.CollateralAuctionHouse.html">CollateralAuctionHouse.sol</a> for more details.</p>
+<h2 id="1-introduction-7"><a class="header" href="#1-introduction-7">1. Introduction</a></h2>
+<p>The Collateral Auction House plays a crucial role in maintaining the stability of the Azos Protocol by handling the auction of collateral seized from undercollateralized SAFEs. The primary objective is to convert this confiscated collateral into system coins, which are then forwarded to the Accounting Engine for debt destruction.</p>
+<p>The Collateral Auction House utilizes an increasing discount model. This encourages early bidding by incrementally increasing the discount applied to the collateral over time. The rationale behind this is to expedite the auction process and ensure that debts are covered as swiftly as possible.</p>
+<h2 id="2-contract-details-7"><a class="header" href="#2-contract-details-7">2. Contract Details</a></h2>
+<h3 id="key-methods-7"><a class="header" href="#key-methods-7">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>buyCollateral</code>: Enables holders of the system coin to participate in auctions by purchasing available collateral.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>startAuction</code>: Initiates a new collateral auction for the contract's specific collateral type.</li>
+<li><code>terminateAuctionPrematurely</code>: Allows for the early termination of an ongoing auction, with any remaining collateral allocated to the caller's address.</li>
+</ul>
+<h3 id="contract-parameters-8"><a class="header" href="#contract-parameters-8">Contract Parameters</a></h3>
+<ul>
+<li><strong>Liquidation Engine Address</strong>: Specifies the address of the Liquidation Engine, the module responsible for handling the on-auction system coin limit.</li>
+<li><strong>Oracle Relayer Address</strong>: Specifies the address of the Oracle Relayer, responsible for providing up-to-date price information.</li>
+<li><code>minimumBid</code>: Sets the minimum system coin bid required to participate in collateral auctions.</li>
+<li><code>minDiscount</code>: Defines the initial discount rate at which auctions commence.</li>
+<li><code>maxDiscount</code>: Sets the upper limit for the discount rate that auctions can achieve.</li>
+<li><code>perSecondDiscountUpdateRate</code>: Determines the rate at which the discount increases for each second the auction is live.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-7"><a class="header" href="#3-key-mechanisms--concepts-7">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="collateral-price-feed-and-discount-model"><a class="header" href="#collateral-price-feed-and-discount-model">Collateral Price Feed and Discount Model</a></h3>
+<p>The Collateral Auction House relies on the system's collateral price feed to determine the current market price of the collateral in terms of system coins. Upon establishing this baseline, the contract employs a dynamic discount model to calculate the auction price of the collateral. Here's how the discount model works:</p>
+<ul>
+<li>
+<p><strong>Initial Discount</strong>: Each auction kicks off with a predefined minimum discount. This discount is set by the <code>minDiscount</code> parameter.</p>
+</li>
+<li>
+<p><strong>Per-Second Discount Rate</strong>: The contract features a rate at which the discount increases on a per-second basis. This rate is determined by the <code>perSecondDiscountUpdateRate</code> parameter.</p>
+</li>
+<li>
+<p><strong>Maximum Discount Cap</strong>: Once the auction reaches the maximum allowable discount, as defined by the <code>maxDiscount</code> parameter, the auction remains at this discount level until either all the collateral is bought or the auction is prematurely terminated.</p>
+</li>
+</ul>
+<p>This approach ensures that the auction starts incentivizing early bids but also allows for adjustments over time, ultimately facilitating efficient price discovery and collateral liquidation.</p>
+<h2 id="4-gotchas-7"><a class="header" href="#4-gotchas-7">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-7"><a class="header" href="#5-failure-modes-7">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="debt-auction-house"><a class="header" href="#debt-auction-house">Debt Auction House</a></h1>
+<p>See <a href="detailed/auctions//src/contracts/DebtAuctionHouse.sol/contract.DebtAuctionHouse.html">DebtAuctionHouse.sol</a> for more details.</p>
+<h2 id="1-introduction-8"><a class="header" href="#1-introduction-8">1. Introduction</a></h2>
+<p>The Debt Auction House contract plays a crucial role in the protocol by managing and auctioning off bad debt. To achieve this, the contract mints protocol tokens, which are auctioned off to users in exchange for system coins. These system coins are then used to annihilate the corresponding bad debt from the system.</p>
+<p>The Debt Auction House utilizes a descending bidding model. In this model, a predetermined amount of debt is up for auction. Participants bid by specifying how many protocol tokens they are willing to accept in exchange for taking on this debt. As the auction progresses, the number of protocol tokens a bidder is willing to accept decreases, leading to a more favorable exchange rate for the protocol.</p>
+<p>This system ensures that bad debts are efficiently cleared from the protocol, while also incentivizing participants to compete for the most favorable exchange rates.</p>
+<h2 id="2-contract-details-8"><a class="header" href="#2-contract-details-8">2. Contract Details</a></h2>
+<h3 id="key-methods-8"><a class="header" href="#key-methods-8">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>restartAuction</code>: Allows for the resumption of an expired auction that has received no bids. This restarts the auction and increases the initial quantity of protocol tokens to be minted as an incentive for participation.</li>
+<li><code>decreaseSoldAmount</code>: Enables users to participate in the auction by bidding. System coins are transferred during this operation.</li>
+<li><code>settleAuction</code>: Finalizes an auction, distributing the protocol tokens to the winning bidder.</li>
+<li><code>terminateAuctionPrematurely</code>: Ends an auction before its scheduled completion. This method creates an unbacked debt entry in the Accounting Engine and returns the system coins to the highest bidder. Note that this action can only be performed when the contract is disabled.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>startAuction</code>: Initiates a new debt auction.</li>
+</ul>
+<h3 id="contract-parameters-9"><a class="header" href="#contract-parameters-9">Contract Parameters:</a></h3>
+<ul>
+<li><strong>Accounting Engine</strong>: The address of the Accounting Engine contract that handles the system's financial records.</li>
+</ul>
+<p>These methods and parameters provide a comprehensive control structure for managing bad debt through auctions, balancing both protocol and user interests.</p>
+<h2 id="3-key-mechanisms--concepts-8"><a class="header" href="#3-key-mechanisms--concepts-8">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-8"><a class="header" href="#4-gotchas-8">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-8"><a class="header" href="#5-failure-modes-8">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="surplus-auction-house"><a class="header" href="#surplus-auction-house">Surplus Auction House</a></h1>
+<p>For more details, refer to the <a href="detailed/auctions//src/contracts/SurplusAuctionHouse.sol/contract.SurplusAuctionHouse.html">SurplusAuctionHouse.sol</a> contract.</p>
+<h2 id="1-introduction-9"><a class="header" href="#1-introduction-9">1. Introduction</a></h2>
+<p>The Surplus Auction House is tasked with auctioning the system's surplus coins in exchange for protocol tokens. A fraction of these protocol tokens is burnt to create a deflationary effect, while the rest is transferred to a specified target address. The auction employs an ascending bidding model: a fixed number of system coins are up for auction, and participants bid by offering increasingly higher amounts of protocol tokens.</p>
+<h2 id="2-contract-details-9"><a class="header" href="#2-contract-details-9">2. Contract Details</a></h2>
+<h3 id="key-methods-9"><a class="header" href="#key-methods-9">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>increaseBidSize</code>: Enables users to participate in the auction by offering higher amounts of protocol tokens, which are transferred during this operation.</li>
+<li><code>restartAuction</code>: Resets an expired auction that has not received any bids, making it available for new bids.</li>
+<li><code>settleAuction</code>: Finalizes the auction, transferring the system coins to the winning bidder.</li>
+<li><code>terminateAuctionPrematurely</code>: Aborts an auction before its scheduled completion. This action returns the protocol tokens to the highest bidder but is only possible when the contract is deactivated.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>startAuction</code>: Initiates a new surplus auction.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-9"><a class="header" href="#3-key-mechanisms--concepts-9">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-9"><a class="header" href="#4-gotchas-9">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-9"><a class="header" href="#5-failure-modes-9">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-settlement"><a class="header" href="#-settlement">❱ Settlement</a></h1>
+<p>The Settlement Module serves as a critical component in the lifecycle of the ZAI protocol, governing its shutdown and the subsequent redemption of ZAI tokens for underlying collateral. It activates in circumstances that necessitate the halting of the system—such as critical bugs, governance decisions, or market anomalies—to ensure a smooth and orderly unwinding of positions. The module's primary objective is to provide a transparent and fair mechanism for redeeming ZAI tokens, thereby ensuring the protocol's integrity even in its termination phase.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="global-settlement"><a class="header" href="#global-settlement">Global Settlement</a></h1>
+<p>See <a href="detailed/settlement//src/contracts/settlement/GlobalSettlement.sol/contract.GlobalSettlement.html">GlobalSettlement.sol</a> for more details.</p>
+<h2 id="1-introduction-10"><a class="header" href="#1-introduction-10">1. Introduction</a></h2>
+<p>The Global Settlement contract serves as the emergency brake and ultimate wind-down mechanism for the system. Its responsibilities include:</p>
+<ul>
+<li><strong>Triggering the System Shutdown</strong>: Initiating the process to safely halt all operations.</li>
+<li><strong>Processing SAFEs</strong>: Settling all Secure, Automated, Flexible, and Efficient (SAFE) accounts to determine each collateral's deficits and surplus.</li>
+<li><strong>Terminating Auctions</strong>: Bringing all ongoing auctions to a premature end, ensuring that assets are no longer tied up.</li>
+<li><strong>Calculating Redemption Price</strong>: Determining the value at which system coin holders can redeem their coins for backing collateral.</li>
+<li><strong>Redemption</strong>: Enabling system coin holders to exchange their coins for the appropriate collateral, completing the shutdown process.</li>
+</ul>
+<p>This contract is crucial for ensuring that, in the event of a system shutdown, all parties can walk away with assets that are rightfully theirs, thus maintaining a fair and secure environment.</p>
+<h2 id="2-contract-details-10"><a class="header" href="#2-contract-details-10">2. Contract Details</a></h2>
+<h3 id="key-methods-10"><a class="header" href="#key-methods-10">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>freezeCollateralType</code>: Captures the current market price of a specified collateral type and freezes it within the contract. This is crucial for ensuring accurate valuations during the shutdown process.</li>
+<li><code>fastTrackAuction</code>: Allows for the immediate termination of ongoing collateral auctions. This function ensures that assets are returned to their rightful owners as quickly as possible during a shutdown.</li>
+<li><code>processSAFE</code>: This method is responsible for settling the debts associated with SAFEs and determining any collateral deficit that exists. This ensures that all assets and liabilities are properly accounted for.</li>
+<li><code>freeCollateral</code>: Post-processing of SAFEs, this function enables SAFE owners to withdraw any remaining collateral. This ensures that users recover their tied-up assets.</li>
+<li><code>setOutstandingCoinSupply</code>: Sets the global coin supply (which also accounts for the system's debt). This is important for calculating how much collateral can be redeemed for each system coin.</li>
+<li><code>calculateCashPrice</code>: Determines the price at which system coin holders can redeem their coins for backing collateral. This provides clarity and fairness in the redemption process.</li>
+<li><code>prepareCoinsForRedeeming</code>: Allows system coin holders to deposit their coins into the contract in preparation for redemption. This sets the stage for users to reclaim their backing collateral.</li>
+<li><code>redeemCollateral</code>: Executes the redemption process, transferring the appropriate amount of collateral to system coin holders who have previously deposited their coins for redemption. This is the final step in the shutdown and asset recovery process.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>shutdownSystem</code>: This function triggers the system shutdown, initiating all the processes mentioned above. This function can only be executed by an authorized entity.</li>
+</ul>
+<p>These methods collectively enable a structured and secure way to halt system operations, settle accounts, and distribute assets in the event of a system shutdown.</p>
+<h3 id="contract-parameters-10"><a class="header" href="#contract-parameters-10">Contract Parameters:</a></h3>
+<ul>
+<li><strong>Oracle Relayer</strong>: The address used to fetch the redemption price and the collaterals price.</li>
+<li><strong>Liquidation Engine</strong>: The address used to fetch the collateral auction houses from each collateral type.</li>
+<li><strong>Coin Join</strong>: The Coin Join contract (to disable).</li>
+<li><strong>Collateral Join Factory</strong>: The Collateral Join Factory contract (to disable).</li>
+<li><strong>Collateral Auction House Factory</strong>: The Collateral Auction House Factory contract (to disable).</li>
+<li><strong>Stability Fee Treasury</strong>: The Stability Fee Treasury contract, that needs to be disabled before the Accounting Engine to transfer its funds to it.</li>
+<li><strong>Accounting Engine</strong>: The Accounting Engine contract, that tries after disablement to settle as much debt as possible, and transfer the remaining surplus to the post settlement drain account.</li>
+<li><code>shutdownCooldown</code>: The amount of time that must pass after the system shutdown is triggered before the outstanding coin supply can be calculated.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-10"><a class="header" href="#3-key-mechanisms--concepts-10">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="system-shutdown"><a class="header" href="#system-shutdown">System Shutdown</a></h3>
+<p>The system shutdown is triggered by calling the <code>shutdownSystem</code> method, that triggers the <code>disableContract</code> method on the disableable contracts (see <a href="detailed/settlement//src/contracts/utils/Disableable.sol/contract.Disableable.html">Disableable.sol</a>). Disableable contracts implement the following tools:</p>
+<ul>
+<li><code>contractEnabled</code>: A boolean flag that indicates whether the contract is enabled or disabled.</li>
+<li><code>_onContractDisable</code> method: A routine that is triggered when the contract is disabled.</li>
+<li><code>whenEnabled / whenDisabled</code> modifiers: Modifiers that can be used to restrict the execution of a method to when the contract is enabled or disabled.</li>
+</ul>
+<h3 id="collateral-redemption-price-calculation"><a class="header" href="#collateral-redemption-price-calculation">Collateral Redemption Price Calculation</a></h3>
+<p>The <code>calculateCashPrice</code> method plays a critical role in the Global Settlement contract by determining the rate at which each system coin can be redeemed for its underlying collateral. The method employs a complex formula to arrive at this price, ensuring an equitable distribution of collateral assets based on various dynamic factors.</p>
+<p>The formula used to calculate the collateral redemption price (<code>collateralCashPrice</code>) is as follows:</p>
+<pre><code>collateralCashPrice =
+(
+    collateralDebt * accumulatedRate / collateralPrice
+    - collateralShortfall
+) / outstandingCoinSupply
+</code></pre>
+<p><strong>Where</strong>:</p>
+<ul>
+<li><code>collateralDebt</code>: Represents the aggregate debt associated with a specific collateral type, generated by SAFEs.</li>
+<li><code>accumulatedRate</code>: The total accrued rate (like interest or tax rate) applied to the specific collateral type over time.</li>
+<li><code>collateralPrice</code>: The most recent market price for the specific collateral type, usually fetched from a trusted oracle.</li>
+<li><code>outstandingCoinSupply</code>: The total circulation of system coins, essentially the aggregate debt of the system.</li>
+<li><code>collateralShortfall</code>: Quantifies the deficit in terms of system coins for the collateral type.
+<blockquote>
+<p>If SAFEs for a particular collateral type are under-collateralized, this value will capture the shortfall. Conversely, if SAFEs are over-collateralized, owners are entitled to withdraw the surplus.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="redemption-mechanism"><a class="header" href="#redemption-mechanism">Redemption Mechanism:</a></h4>
+<p>Once the <code>collateralCashPrice</code> is calculated, users can redeem their system coins for the backing collateral using the following formula:</p>
+<pre><code>redeemableCollateral = coinAmount * collateralCashPrice
+</code></pre>
+<p>This ensures that each coin is redeemable for a fair portion of collateral, aiming to clear out both coins and collateral from the system by the end of the Global Settlement process.</p>
+<blockquote>
+<p><strong>Notice</strong>: The design of this formula is such that by the end of the redemption process, the system should ideally have neither excess coins nor remaining collateral. It provides a balanced mechanism for winding down system operations and returning assets to participants.</p>
+</blockquote>
+<h2 id="4-gotchas-10"><a class="header" href="#4-gotchas-10">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-10"><a class="header" href="#5-failure-modes-10">5. Failure Modes</a></h2>
+<h3 id="parameters-misconfiguration-5"><a class="header" href="#parameters-misconfiguration-5">Parameters Misconfiguration</a></h3>
+<ul>
+<li>A too-low <code>shutdownCooldown</code> risks premature shutdown, leading to inaccurate collateral redemption prices due to incomplete auctions and unprocessed SAFEs.</li>
+<li>A too-high <code>shutdownCooldown</code> prolongs the waiting period for users to redeem their coins for backing collateral, causing potential liquidity issues.</li>
+</ul>
+<h3 id="incorrect-authorizations-or-state"><a class="header" href="#incorrect-authorizations-or-state">Incorrect Authorizations or State</a></h3>
+<p>This contract requires to have authorization in the following contracts:</p>
+<ul>
+<li>SAFEEngine</li>
+<li>OracleRelayer</li>
+<li>LiquidationEngine</li>
+<li>CollateralAuctionHouseFactory</li>
+<li>CoinJoin</li>
+<li>CollateralJoinFactory</li>
+<li>StabilityFeeTreasury</li>
+<li>AccountingEngine</li>
+</ul>
+<p>Should one of this authorizations be missing, the contract will not work as expected, reverting on the <code>shutdownSystem</code> routine.</p>
+<p>The routine also requires all above contracts to be enabled. Should one of these contracts have been manually disabled, the routine will revert.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="post-settlement-surplus-auction-house"><a class="header" href="#post-settlement-surplus-auction-house">Post Settlement Surplus Auction House</a></h1>
+<p>See <a href="detailed/settlement//src/contracts/settlement/PostSettlementSurplusAuctionHouse.sol/contract.PostSettlementSurplusAuctionHouse.html">PostSettlmentSurplusAuctionHouse.sol</a> for more details.</p>
+<h2 id="1-introduction-11"><a class="header" href="#1-introduction-11">1. Introduction</a></h2>
+<p>The Post Settlement Surplus Auction House is responsible for auctioning off the surplus coins the system has after the global settlement is triggered. The auctions resemble the <a href="detailed/settlement//detailed/auctions/sah.html">Surplus Auction House</a> auctions, with the difference that all of the protocol tokens are burned.</p>
+<h2 id="2-contract-details-11"><a class="header" href="#2-contract-details-11">2. Contract Details</a></h2>
+<h3 id="key-methods-11"><a class="header" href="#key-methods-11">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>increaseBidSize</code>: Allows users to bid on the auctions, protocol tokens are transferred in this call.</li>
+<li><code>restartAuction</code>: Restarts an auction that expired with no bids.</li>
+<li><code>settleAuction</code>: Settles an auction, sending the system coins to the winning bidder.</li>
+</ul>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>startAuction</code>: Starts a new surplus auction.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-11"><a class="header" href="#3-key-mechanisms--concepts-11">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-11"><a class="header" href="#4-gotchas-11">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-11"><a class="header" href="#5-failure-modes-11">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="settlement-surplus-actioneer"><a class="header" href="#settlement-surplus-actioneer">Settlement Surplus Actioneer</a></h1>
+<p>See <a href="detailed/settlement//src/contracts/settlement/SettlementSurplusAuctioneer.sol/contract.SettlementSurplusAuctioneer.html">SettlementSurplusActioneer.sol</a> for more details.</p>
+<h2 id="1-introduction-12"><a class="header" href="#1-introduction-12">1. Introduction</a></h2>
+<p>The Settlement Surplus Auction Module facilitates the auctioning of surplus coins held by the system following the activation of a global settlement. The module's purpose is grounded in the idea that without conducting an auction, the total circulating coins might fall short of the overall system debt. This imbalance could lead to an increased redemption price for collateral. By orchestrating surplus auctions, the system guarantees an equitable redemption price, while also deterring ill-intentioned actors from exploiting a global settlement to acquire collaterals at a discounted rate.</p>
+<h2 id="2-contract-details-12"><a class="header" href="#2-contract-details-12">2. Contract Details</a></h2>
+<h3 id="key-methods-12"><a class="header" href="#key-methods-12">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>auctionSurplus</code>: Triggers a surplus auction and starts the cooldown period.</li>
+</ul>
+<h3 id="contract-parameters-11"><a class="header" href="#contract-parameters-11">Contract Parameters:</a></h3>
+<ul>
+<li><strong>Accounting Engine</strong>: Used to fetch the surplus auction parameters.</li>
+<li><strong>Surplus Auction House</strong>: The Post Settlement Surplus Auction House contract.</li>
+</ul>
+<blockquote>
+<p><strong>Notice</strong>: The contract reads the parameters from the Accounting Engine to define the surplus auction cooldown period and the size of the auctions.</p>
+</blockquote>
+<h2 id="3-key-mechanisms--concepts-12"><a class="header" href="#3-key-mechanisms--concepts-12">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-12"><a class="header" href="#4-gotchas-12">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-12"><a class="header" href="#5-failure-modes-12">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-tokens--utils"><a class="header" href="#-tokens--utils">❱ Tokens &amp; Utils</a></h1>
+<p>This section introduces the ERC20 tokens, and token adaptor contracts, such as CoinJoin and CollateralJoin. These contracts serve as vital bridges between tokens and the smart contract operations, enhancing interoperability and functionality.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="system-coin"><a class="header" href="#system-coin">System Coin</a></h1>
+<p>See <a href="detailed/tokens//src/contracts/tokens/SystemCoin.sol/contract.SystemCoin.html">SystemCoin.sol</a> for more details.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="protocol-token"><a class="header" href="#protocol-token">Protocol Token</a></h1>
+<p>See <a href="detailed/tokens//src/contracts/tokens/ProtocolToken.sol/contract.ProtocolToken.html">ProtocolToken.sol</a> for more details.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="join-adapters"><a class="header" href="#join-adapters">Join Adapters</a></h1>
+<p>See <a href="detailed/tokens//src/contracts/utils/CoinJoin.sol/contract.CoinJoin.html">CoinJoin.sol</a>, <a href="detailed/tokens//src/contracts/utils/CollateralJoin.sol/contract.CollateralJoin.html">CollateralJoin.sol</a> for more details.</p>
+<h2 id="1-introduction-13"><a class="header" href="#1-introduction-13">1. Introduction</a></h2>
+<p>The Join Adapter contracts assume responsibility for facilitating the seamless movement of collateral and system coin ERC20s into and out of the system. Their functions encompass:</p>
+<ul>
+<li>Safeguarding collateral ERC20 tokens through locking them within the contract, leading to an augmentation of the user's collateral type balance.</li>
+<li>Liberating collateral ERC20 tokens back to the user, thereby diminishing the user's collateral type balance.</li>
+<li>Generating system coin ERC20 tokens through the locking of internal coins within the contract.</li>
+<li>Eradicating system coin ERC20 tokens from the user's holdings, resulting in the release of internal coins to the user.</li>
+</ul>
+<p>These contracts engage directly with the SAFE Engine, necessitating occasional user approval to permit the contract to access funds from their account. In the system, a collateral balance is denoted by a specific collateral type string (for example, 'ETH-A', 'OP').</p>
+<h2 id="2-contract-details-13"><a class="header" href="#2-contract-details-13">2. Contract Details</a></h2>
+<h2 id="21-collateral-join"><a class="header" href="#21-collateral-join">2.1 Collateral Join</a></h2>
+<h3 id="key-methods-13"><a class="header" href="#key-methods-13">Key Methods:</a></h3>
+<ul>
+<li><code>join</code>: This operation secures collateral ERC20 tokens within the contract and augments the collateral type balance of the designated account.</li>
+<li><code>exit</code>: This function liberates collateral ERC20 tokens to the specified account, resulting in a reduction of the user's collateral type balance.</li>
+</ul>
+<h2 id="22-coin-join"><a class="header" href="#22-coin-join">2.2 Coin Join</a></h2>
+<h3 id="key-methods-14"><a class="header" href="#key-methods-14">Key Methods:</a></h3>
+<ul>
+<li><code>exit</code>: This action involves locking internal coins within the contract and generating system coin ERC20 tokens for the designated account.</li>
+<li><code>join</code>: This function entails releasing internal coins to the specified account while extinguishing system coin ERC20 tokens from the user's holdings.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-13"><a class="header" href="#3-key-mechanisms--concepts-13">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="system-coin-vs-collateral-modes"><a class="header" href="#system-coin-vs-collateral-modes">System Coin vs Collateral Modes</a></h3>
+<p>The system coin ERC20 represents a transferable unit of internal COINs that were initially generated via SAFEs. The ultimate purpose of the system coin ERC20 is to integrate into the system and contribute to the reduction of DEBT. This purpose leads to a reversal in logic between the Coin and Collateral Join contracts concerning the <code>join</code> and <code>exit</code> methods.</p>
+<p>In the Collateral Join contract, users lock collateral to create an internal balance of a specific collateral type, and they can subsequently burn this internal balance to retrieve their ERC20 tokens. Conversely, in the Coin Join contract, users perform the opposite actions: they burn or mint the system coin ERC20 to respectively release or lock internal coins.</p>
+<h3 id="erc20-decimal-conversion"><a class="header" href="#erc20-decimal-conversion">ERC20 Decimal Conversion</a></h3>
+<p>To accommodate a diverse array of collaterals and price references, the system employs a standardized unit for establishing balances and quotes, utilizing WAD precision (18 decimals). To ensure this consistency, the Collateral Join contract integrates a conversion factor during the execution of its join and exit methods. This strategy guarantees that users consistently interact with the contract using <code>wei</code> measurements, which align with the token's inherent precision.</p>
+<p><strong>Notice</strong>: The CollateralJoin contract supports tokens with less than 18 decimals, but not more.</p>
+<h2 id="4-gotchas-13"><a class="header" href="#4-gotchas-13">4. Gotchas</a></h2>
+<h3 id="precision-dust"><a class="header" href="#precision-dust">Precision Dust</a></h3>
+<p>Due to the potential variance between the precision of the system and that of the ERC20 tokens, users might encounter a situation where their collateral balance is lower than the system's minimum withdrawal threshold. This discrepancy can arise when the amount of collateral falls short of even <code>1 wei</code>, which is the smallest unit the system can process for withdrawal purposes.</p>
+<h2 id="5-failure-modes-13"><a class="header" href="#5-failure-modes-13">5. Failure Modes</a></h2>
+<h3 id="global-settlement-mode"><a class="header" href="#global-settlement-mode">Global Settlement Mode</a></h3>
+<p>When the Coin Join functionality is deactivated, the contract permits the use of the <code>join</code> method while restricting access to the <code>exit</code> method. This implies that users retain the ability to convert their system coin ERC20 into internal coins, but they are prevented from generating additional system coin ERC20 tokens.</p>
+<p>Conversely, in the event of Collateral Join being disabled, the contract enables the <code>exit</code> method while prohibiting the use of the <code>join</code> method. This signifies that users maintain the capability to redeem their collateral ERC20 by burning their corresponding collateral type balance, but they are unable to add more collateral ERC20 tokens to the contract.</p>
+<h3 id="on-authorizations"><a class="header" href="#on-authorizations">On Authorizations</a></h3>
+<ul>
+<li>For Coin Join to mint system coin ERC20, authorization within the System Coin contract is mandatory.</li>
+<li>Prior to interaction, users are required to grant approval within the SAFE Engine for the Coin Join contracts to access and withdraw funds from their account.</li>
+<li>Collateral Join necessitates authorization within the SAFE Engine contract for the purpose of modifying the collateral balance.</li>
+<li>With an active ERC20 balance and SAFE Engine authorization, the Collateral Join contract is capable of withdrawing funds from the user's account.</li>
+<li>The Coin Join contract can effectively burn system coin ERC20 tokens to provide funds to the user's account, provided the user has granted approval within the SAFE Engine and the Coin Join retains an internal coin balance.</li>
+</ul>
+<h3 id="replaceability"><a class="header" href="#replaceability">Replaceability</a></h3>
+<p>Both the Coin and Collateral Join contracts could potentially be superseded by a single new contract through a multi-step process carried out by a single user. This process involves repeating the following sequence:</p>
+<ol>
+<li>Deploy and configure the new Join contract.</li>
+<li>Deactivate the current Join contract.</li>
+<li>For the Collateral Join:
+<ul>
+<li>Execute <code>exit</code> on the old (deactivated) contract (reducing the internal balance).</li>
+<li>Execute <code>join</code> on the new contract (increasing the internal balance).</li>
+<li>Execute <code>exit</code> on the old contract.</li>
+<li>Repeat this sequence until all collateral is successfully transferred.</li>
+</ul>
+</li>
+<li>For the Coin Join:
+<ul>
+<li>Remove authorization for the system coin ERC20 from the old contract.</li>
+<li>Execute <code>join</code> on the old (deactivated) contract (increasing the internal balance).</li>
+<li>Execute <code>exit</code> on the new contract (reducing the internal balance).</li>
+<li>Repeat this sequence until all system coin ERC20 tokens are moved.</li>
+</ul>
+</li>
+</ol>
+<p>The primary objective of this procedure is to ensure that both contracts conclude with no funds remaining locked within them. This approach guarantees that the new join contract attains an internal balance equivalent to the amount of ERC20 tokens locked. Subsequently, it's essential to revoke the relevant authorizations from these contracts to complete their deprecation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-contract-utils"><a class="header" href="#-contract-utils">❱ Contract Utils</a></h1>
+<p>This section provides an in-depth exploration of inheritable utility contracts meticulously crafted to enhance and amplify the capabilities of the protocol. These adaptable utility contracts, when inherited by other protocol contracts, introduce fresh and extended functionalities that enhance the overall development process and consistency of the system. Through a detailed examination of these utilities, readers will gain a deeper understanding of how they contribute to a more robust and harmonized protocol ecosystem.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="authorizable"><a class="header" href="#authorizable">Authorizable</a></h1>
+<p>See <a href="detailed/utils//src/contracts/utils/Authorizable.sol/abstract.Authorizable.html">Authorizable.sol</a> for more details.</p>
+<h2 id="1-introduction-14"><a class="header" href="#1-introduction-14">1. Introduction</a></h2>
+<p>This abstract contract introduces a fundamental authorization mechanism designed for contracts. It enables a contract to manage authorization for multiple accounts, granting them specific permissions. This is achieved through the use of modifiers, which serve to control and restrict access to designated methods as required.</p>
+<h2 id="2-contract-details-14"><a class="header" href="#2-contract-details-14">2. Contract Details</a></h2>
+<h3 id="key-methods-15"><a class="header" href="#key-methods-15">Key Methods:</a></h3>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>addAuthorization</code>: Grants authorization to an account.</li>
+<li><code>removeAuthorization</code>: Removes authorization from an account.</li>
+</ul>
+<p><strong>Notice</strong>: Both methods will revert in the case of a no-operation (i.e. the account is already authorized or unauthorized).</p>
+<h2 id="3-key-mechanisms--concepts-14"><a class="header" href="#3-key-mechanisms--concepts-14">3. Key Mechanisms &amp; Concepts</a></h2>
+<p>In the contracts that inherit this functionality, all authorized accounts possess equal access privileges, without any hierarchy of authorization. This implies that any authorized account is capable of both adding and removing authorization for any other account.</p>
+<h2 id="4-gotchas-14"><a class="header" href="#4-gotchas-14">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-14"><a class="header" href="#5-failure-modes-14">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="modifiable"><a class="header" href="#modifiable">Modifiable</a></h1>
+<p>See <a href="detailed/utils//src/contracts/utils/Modifiable.sol/abstract.Modifiable.html">Modifiable.sol</a> for more details.</p>
+<h2 id="1-introduction-15"><a class="header" href="#1-introduction-15">1. Introduction</a></h2>
+<p>This abstract contract establishes a standardized mechanism by which contracts can modify their registry and parameters. The available methods are confined to authorized accounts, ensuring that only designated entities have the authority to make these adjustments.</p>
+<h2 id="2-contract-details-15"><a class="header" href="#2-contract-details-15">2. Contract Details</a></h2>
+<h3 id="key-methods-16"><a class="header" href="#key-methods-16">Key Methods:</a></h3>
+<ul>
+<li><code>modifyParameters</code>: Modifies a parameter of the contract.</li>
+<li><code>_validateParameters</code>: Hook to validate the parameters after modifying them.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-15"><a class="header" href="#3-key-mechanisms--concepts-15">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="standarized-method"><a class="header" href="#standarized-method">Standarized Method</a></h3>
+<p>The <code>modifyParameters</code> method is standarized to be shared across contracts that may require different types of parameters. The parameter values are passed as a bytes array, and the inheriting contract is responsible for parsing them (see <a href="detailed/utils//src/libraries/Encoding.sol/library.Encoding.html">Encoding</a>).</p>
+<p>There are 2 methods that can be used to modify the parameters:</p>
+<ul>
+<li><code>modifyParameters(bytes32 _param, bytes memory _data)</code>: Modifies a global contract parameter.</li>
+<li><code>modifyParameters(bytes32 _cType, bytes32 _param, bytes memory _data)</code>: Modifies a contract per-collateral parameter.</li>
+</ul>
+<h3 id="parameters-structs"><a class="header" href="#parameters-structs">Parameters Structs</a></h3>
+<p>To explicitly define the parameters that can be modified, the contracts should define a parameters struct. Contract parameters that can be modified should be accessed through this struct, and will be read either as <code>params.__param__</code> or <code>cParams[_cType].__param__</code>.</p>
+<h3 id="parameters-validation"><a class="header" href="#parameters-validation">Parameters Validation</a></h3>
+<p>The <code>_validateParameters</code> hook is called after modifying the parameters, and can be used to validate the new parameters according to the contract's logic. All contract parameters should be validated, despite they having been modified or not. Common validations may use some of the methods defined in the <a href="detailed/utils//src/libraries/Assertions.sol/library.Assertions.html">Assertions</a> library.</p>
+<p>As with the <code>modifyParameters</code> method, there are 2 methods that can be used to validate the parameters:</p>
+<ul>
+<li><code>_validateParameters</code>: Validates all global contract parameter.</li>
+<li><code>_validateCParameters</code>: Validates all contract per-collateral parameter.</li>
+</ul>
+<blockquote>
+<p><strong>Notice</strong>: The validation hooks should avoid a parameter that would cause the contract to be set in an undesired way. For example, the OracleRelayer contract implements a check on the liquidation ratio to be always above 100%, else the system would allow for overleveraged positions.</p>
+</blockquote>
+<h2 id="4-gotchas-15"><a class="header" href="#4-gotchas-15">4. Gotchas</a></h2>
+<h3 id="constructors"><a class="header" href="#constructors">Constructors</a></h3>
+<p>Contracts that incorporate this functionality must guarantee that their constructors enforce initial parameter validation. This approach serves to prevent the deployment of contracts with invalid parameters. As a result, all validated parameters must be provided as arguments during the contract's construction, ensuring that only valid configurations are utilized upon deployment.</p>
+<h3 id="testing"><a class="header" href="#testing">Testing</a></h3>
+<p>To thoroughly test the complete implementation of the <code>modifyParameters</code> method, the testing process should involve fuzzing a parameters struct with all potential values. Subsequently, the method should be called, and the outcome must be validated to confirm that all parameters within the struct have been altered as intended.</p>
+<p>To achieve this testing goal, the approach involves comparing the hash of the modified parameters struct with the struct's state obtained from the contract after the modifications have been executed. This rigorous comparison ensures that the method successfully and accurately modifies each parameter as specified.</p>
+<h2 id="5-failure-modes-15"><a class="header" href="#5-failure-modes-15">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="disableable"><a class="header" href="#disableable">Disableable</a></h1>
+<p>See <a href="detailed/utils//src/contracts/utils/Disableable.sol/abstract.Disableable.html">Disableable.sol</a> for more details.</p>
+<h2 id="1-introduction-16"><a class="header" href="#1-introduction-16">1. Introduction</a></h2>
+<p>This abstract contract introduces a fundamental disable mechanism for contracts. It grants the ability for a contract to be effectively deactivated, and utilizes modifiers to control access to specific methods based on the contract's current state.</p>
+<h2 id="2-contract-details-16"><a class="header" href="#2-contract-details-16">2. Contract Details</a></h2>
+<h3 id="key-methods-17"><a class="header" href="#key-methods-17">Key Methods:</a></h3>
+<p><strong>Authorized</strong></p>
+<ul>
+<li><code>disableContract</code>: Disables the contract.</li>
+</ul>
+<p><strong>Internal</strong></p>
+<ul>
+<li><code>_onContractDisable</code>: Hook to be called when the contract is disabled.</li>
+<li><code>_isEnabled</code>: Checks if the contract is enabled.</li>
+</ul>
+<p><strong>Modifiers</strong></p>
+<ul>
+<li><code>whenEnabled</code>: Restricts access to the method to when the contract is enabled.</li>
+<li><code>whenDisabled</code>: Restricts access to the method to when the contract is disabled.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-16"><a class="header" href="#3-key-mechanisms--concepts-16">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-16"><a class="header" href="#4-gotchas-16">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-16"><a class="header" href="#5-failure-modes-16">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-factories"><a class="header" href="#-factories">❱ Factories</a></h1>
+<p>This section introduces a collection of essential contracts designed to streamline the creation and operation of various factory-related components. These contracts, alongside their accompanying utility modules, are specifically engineered to be inherited within the context of factory contracts. By leveraging these building blocks, developers can expedite the process of constructing, managing, and optimizing factory contracts with enhanced efficiency and reliability.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="factorychild"><a class="header" href="#factorychild">FactoryChild</a></h1>
+<p>See <a href="detailed/utils/factory//src/contracts/factories/FactoryChild.sol/abstract.FactoryChild.html">FactoryChild.sol</a> for more details.</p>
+<h2 id="1-introduction-17"><a class="header" href="#1-introduction-17">1. Introduction</a></h2>
+<p>This abstract contract is inherited by all contracts that are deployed through a factory. It provides a reference to the parent factory.</p>
+<h2 id="2-contract-details-17"><a class="header" href="#2-contract-details-17">2. Contract Details</a></h2>
+<h3 id="key-methods-18"><a class="header" href="#key-methods-18">Key Methods:</a></h3>
+<ul>
+<li><code>factory</code>: Returns the parent factory.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-17"><a class="header" href="#3-key-mechanisms--concepts-17">3. Key Mechanisms &amp; Concepts</a></h2>
+<p>The rationale behind this contract is to provide a way of extending contracts that are standalone deployable, to be deployed through a factory. Contracts that are factory deployed can also implement other factory related utils, such as <a href="detailed/utils/factory/authorizable_child.html">AuthorizableChild</a> or <a href="detailed/utils/factory/disableable_child.html">DisableableChild</a>.</p>
+<h2 id="4-gotchas-17"><a class="header" href="#4-gotchas-17">4. Gotchas</a></h2>
+<h3 id="constructors-1"><a class="header" href="#constructors-1">Constructors</a></h3>
+<p>Contracts which only change from the standalone version is the constructor routine should not create a new instance of the contract, but be considered as another child implementation of the same contract. This is the case of the <a href="detailed/utils/factory//src/contracts/factories/CollateralJoinDelegatableChild.sol/contract.CollateralJoinDelegatableChild.html">CollateralJoinDelegatableChild</a>, which is a child implementation of the CollateralJoin contract, that calls the <code>ERC20Votes.delegate</code> method on constructor.</p>
+<h2 id="5-failure-modes-17"><a class="header" href="#5-failure-modes-17">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="authorizablechild"><a class="header" href="#authorizablechild">AuthorizableChild</a></h1>
+<p>See <a href="detailed/utils/factory//src/contracts/factories/AuthorizableChild.sol/abstract.AuthorizableChild.html">AuthorizableChild.sol</a> for more details.</p>
+<h2 id="1-introduction-18"><a class="header" href="#1-introduction-18">1. Introduction</a></h2>
+<p>This abstract contract extends the <a href="detailed/utils/factory//detailed/utils/authorizable.html">Authorizable</a> contract for factory deployed instances, to allow for a contract to be authorized in the parent factory, and still be able to access restricted methods.</p>
+<h2 id="2-contract-details-18"><a class="header" href="#2-contract-details-18">2. Contract Details</a></h2>
+<p><strong>Overrides</strong></p>
+<ul>
+<li><code>_isAuthorized</code>: internal method to check if the sender is authorized in the contract or the parent factory.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-18"><a class="header" href="#3-key-mechanisms--concepts-18">3. Key Mechanisms &amp; Concepts</a></h2>
+<p>The contract will check if the sender is authorized in the contract or the parent factory.</p>
+<h2 id="4-gotchas-18"><a class="header" href="#4-gotchas-18">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-18"><a class="header" href="#5-failure-modes-18">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="disableablechild"><a class="header" href="#disableablechild">DisableableChild</a></h1>
+<p>See <a href="detailed/utils/factory//src/contracts/factories/DisableableChild.sol/abstract.DisableableChild.html">DisableableChild.sol</a> for more details.</p>
+<h2 id="1-introduction-19"><a class="header" href="#1-introduction-19">1. Introduction</a></h2>
+<p>This abstract contract extends the <a href="detailed/utils/factory//detailed/utils/disableable.html">Disableable</a> contract for factory deployed instances, to allow for the parent factory to be disabled, and extend the disabled state to all the child contracts.</p>
+<h2 id="2-contract-details-19"><a class="header" href="#2-contract-details-19">2. Contract Details</a></h2>
+<p><strong>Overrides</strong></p>
+<ul>
+<li><code>_isEnabled</code>: internal method to check if the contract AND the parent factory are enabled.</li>
+<li><code>_onContractDisable</code>: can only be called by the parent factory.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-19"><a class="header" href="#3-key-mechanisms--concepts-19">3. Key Mechanisms &amp; Concepts</a></h2>
+<p>The contract will check if the contract AND the parent factory are enabled. If either is disabled, the contract is considered disabled.</p>
+<h2 id="4-gotchas-19"><a class="header" href="#4-gotchas-19">4. Gotchas</a></h2>
+<p>Contracts that inherit this contract can only be disabled by the parent factory. In that way, the factory can keep track of all the enabled contracts that have been deployed through it.</p>
+<h2 id="5-failure-modes-19"><a class="header" href="#5-failure-modes-19">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-proxy-utils"><a class="header" href="#-proxy-utils">❱ Proxy Utils</a></h1>
+<p>One of the core components of the ZAI ecosystem is the ZAI Safe Manager and Proxy Contracts. These smart contracts are designed to provide a secure and efficient way to interact with the ZAI protocol, enabling users to manage their SAFEs and assets, and execute transactions in a streamlined manner.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="zai-proxy"><a class="header" href="#zai-proxy">ZAI Proxy</a></h1>
+<p>See <a href="detailed/proxies//src/contracts/proxies/HaiProxy.sol/contract.HaiProxy.html">HaiProxy.sol</a> for more details.</p>
+<h2 id="1-introduction-20"><a class="header" href="#1-introduction-20">1. Introduction</a></h2>
+<p>The ZAI Proxy contract is a powerful and flexible smart contract commonly used within the decentralized finance (DeFi) ecosystem. Its primary function is to act as an extensible, personal proxy contract that allows users to bundle multiple actions into single, atomic transactions. With ZAI Proxy, users can interact with multiple smart contracts or execute complex contract calls in a secure, efficient, and modular manner.</p>
+<h2 id="2-contract-details-20"><a class="header" href="#2-contract-details-20">2. Contract Details</a></h2>
+<h3 id="key-methods-19"><a class="header" href="#key-methods-19">Key Methods:</a></h3>
+<p><strong>Owner</strong></p>
+<ul>
+<li><code>execute</code>: Allows owner to call a specific contract (usually a library or helper contract containing business logic) and pass in encoded function arguments to execute a certain operation.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-20"><a class="header" href="#3-key-mechanisms--concepts-20">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="delegate-calls"><a class="header" href="#delegate-calls">Delegate Calls</a></h3>
+<p>In the Ethereum smart contract ecosystem, a delegate call is a special type of contract invocation that allows one contract to "borrow" code from another contract, executing it as if it were part of the calling contract's own code. Unlike a regular function call, a delegate call operates within the context of the calling contract, meaning it can read and modify the calling contract's state variables.</p>
+<h2 id="4-gotchas-20"><a class="header" href="#4-gotchas-20">4. Gotchas</a></h2>
+<h3 id="dealing-with-delegate-calls-and-erc20-transfers"><a class="header" href="#dealing-with-delegate-calls-and-erc20-transfers">Dealing with Delegate Calls and ERC20 Transfers</a></h3>
+<p>When using proxy contracts that rely on delegate calls, certain common actions like ERC20 token transfers require special handling. In a typical setup, if a user attempts to execute <code>ERC20.transfer</code> directly, aiming to transfer a balance that is attributed to the proxy, the operation will fail and the call will revert. This is because delegate calls operate in the context of the calling contract, not the called contract. In this case, the calling contract is the proxy, which doesn't hold the tokens, leading to a failed transaction.</p>
+<p>To work around this issue, an intermediary contract can be introduced. This intermediary contract is responsible for parsing the intended action and then executing the <code>transfer</code> operation using a regular call, rather than a delegate call.</p>
+<h2 id="5-failure-modes-20"><a class="header" href="#5-failure-modes-20">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="proxy-factory"><a class="header" href="#proxy-factory">Proxy Factory</a></h1>
+<p>See <a href="detailed/proxies//src/contracts/proxies/HaiProxyFactory.sol/contract.HaiProxyFactory.html">HaiProxyFactory.sol</a> and <a href="detailed/proxies//src/contracts/proxies/HaiProxyRegistry.sol/contract.HaiProxyRegistry.html">HaiProxyRegistry.sol</a> for more details.</p>
+<h2 id="1-introduction-21"><a class="header" href="#1-introduction-21">1. Introduction</a></h2>
+<p>The Proxy Factory Contract serves as a smart contract template for generating multiple proxy contracts in an automated, scalable manner. The Proxy Registry is a registry that keeps track of all the proxy contracts generated by the Proxy Factory Contract.</p>
+<h2 id="2-contract-details-21"><a class="header" href="#2-contract-details-21">2. Contract Details</a></h2>
+<h3 id="key-methods-20"><a class="header" href="#key-methods-20">Key Methods:</a></h3>
+<p><strong>Public</strong></p>
+<ul>
+<li><code>build</code>: Creates a new proxy contract and registers it in the Proxy Registry.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-21"><a class="header" href="#3-key-mechanisms--concepts-21">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-21"><a class="header" href="#4-gotchas-21">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-21"><a class="header" href="#5-failure-modes-21">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="safe-manager"><a class="header" href="#safe-manager">SAFE Manager</a></h1>
+<p>See <a href="detailed/proxies//src/contracts/proxies/HaiSafeManager.sol/contract.HaiSafeManager.html">HaiSafeManager.sol</a> and <a href="detailed/proxies//src/contracts/proxies/SAFEHandler.sol/contract.SAFEHandler.html">SAFEHandler.sol</a> for more details.</p>
+<h2 id="1-introduction-22"><a class="header" href="#1-introduction-22">1. Introduction</a></h2>
+<p>The SAFE Manager Contract serves as an interface for interacting with the SAFE Engine, which is the core contract responsible for managing SAFEs in the ZAI ecosystem. While the SAFE Engine handles the intricate logic and state changes for SAFEs, the SAFE Manager simplifies and streamlines user interactions with their SAFEs. Essentially, it provides an abstraction layer that facilitates operations such as depositing collateral, withdrawing, and managing debt positions in a user-friendly manner.</p>
+<h2 id="2-contract-details-22"><a class="header" href="#2-contract-details-22">2. Contract Details</a></h2>
+<h3 id="key-methods-21"><a class="header" href="#key-methods-21">Key Methods:</a></h3>
+<ul>
+<li><code>openSAFE</code>: Deploys a new SAFE Handler contract and registers it in the SAFE Manager.</li>
+<li><code>transferSAFEOwnership</code>: Initiates the ownership transfer of a SAFE to another address (doesn't reset SAFE protection).</li>
+<li><code>acceptSAFEOwnership</code>: Commits to the ownership transfer of a SAFE to another address (needs to be called by the new SAFE owner).</li>
+<li><code>modifySAFECollateralization</code>: Modifies the collateralization ratio of a SAFE (lock/free collateral and/or generate/repay debt).</li>
+<li><code>transferCollateral</code>: Transfers collateral from one account to another.</li>
+<li><code>transferInternalCoins</code>: Transfers internal coins from one account to another.</li>
+<li><code>quitSystem</code>: Closes a SAFE and transfers all remaining collateral and debt to the user's address.</li>
+<li><code>enterSystem</code>: Migrates collateral and debt from a source SAFE Handler to a destination SAFE.</li>
+<li><code>moveSAFE</code>: Migrates a SAFE from one SAFE to another.</li>
+<li><code>protectSAFE</code>: Protects a SAFE from being liquidated, using a SafeSaviour position to improve the SAFE health when it falls below the liquidation ratio.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-22"><a class="header" href="#3-key-mechanisms--concepts-22">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="safe-ids"><a class="header" href="#safe-ids">SAFE IDs</a></h3>
+<p>The SAFE Engine identifies each SAFE by its unique contract address and the type of collateral it holds. In contrast, the SAFE Manager simplifies this by assigning each SAFE an auto-incremental ID when it is created. This ID serves as an easy-to-use reference point for users and external contracts, streamlining interactions and management. The auto-incremental ID is particularly useful for human readability and ease of interaction, while the address and collateral type identification in the SAFE Engine provides more granularity and is essential for the underlying mechanics.</p>
+<h3 id="understanding-the-safe-handler"><a class="header" href="#understanding-the-safe-handler">Understanding the SAFE Handler</a></h3>
+<p>The SAFE Handler is a specialized contract that acts as an intermediary between the SAFE Engine and the SAFE Manager in the ZAI system. Spawned when a new SAFE is created from the SAFE Manager, this contract communicates directly with the SAFE Engine from its unique address, to grant the SAFE Manager authorization to manage its corresponding SAFE, allowing for simplified user interactions and enhanced security. Essentially, each SAFE Handler represents a single-collateral SAFE and is managed by the SAFE Manager, which also controls any further authorizations for it.</p>
+<h3 id="user-authorization"><a class="header" href="#user-authorization">User Authorization</a></h3>
+<p>The SAFE Manager Contract allows users to specify which addresses are authorized to interact with their SAFEs. This is crucial for advanced users who may want to deploy automated strategies via external smart contracts or trusted third parties.</p>
+<h3 id="safe-ownership-transfer"><a class="header" href="#safe-ownership-transfer">SAFE Ownership Transfer</a></h3>
+<p>One unique feature is the ability to transfer ownership of a SAFE to another address. This facilitates a range of possibilities, including the sale of debt positions or the use of SAFEs in more complex financial products.</p>
+<p>By providing a more accessible interface to the underlying SAFE Engine, the SAFE Manager Contract is an essential tool for anyone looking to interact with SAFEs in the ZAI ecosystem.</p>
+<h3 id="safe-protection"><a class="header" href="#safe-protection">SAFE Protection</a></h3>
+<p>SAFE owners can choose to connect a SafeSaviour position in order to improve the SAFE health and protect it from liquidation. When the SAFE is on the process of being liquidated, the SafeSaviour contract will unwind the user's position, in order to either reduce the SAFE debt, or increase its collateral, to improve the SAFE health and try to prevent liquidation.</p>
+<p>SAFE owners need to account that the SafeSaviour position is connected to the SAFE id, so when transferring ownership to another account, it is responsibility of the previous owner to disconnect any liquidity deposited in the SafeSaviour contract.</p>
+<h2 id="4-gotchas-22"><a class="header" href="#4-gotchas-22">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-22"><a class="header" href="#5-failure-modes-22">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-actions"><a class="header" href="#-actions">❱ Actions</a></h1>
+<p>The Actions Contract streamlines this process by offering a collection of pre-defined "actions" or methods that can be called through a proxy contract. These actions can then be combined into a single, atomic transaction, saving both time and cost.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="basic-actions"><a class="header" href="#basic-actions">Basic Actions</a></h1>
+<p>See <a href="detailed/proxies/actions//src/contracts/proxies/actions/BasicActions.sol/contract.BasicActions.html">BasicActions.sol</a> for more details.</p>
+<h2 id="1-introduction-23"><a class="header" href="#1-introduction-23">1. Introduction</a></h2>
+<p>These actions encapsulate all functionalities needed for the comprehensive management of Single-Collateral SAFEs within the SAFE Engine. Whether you're aiming to open, modify, or close SAFEs, Basic Actions provide the modular and gas-efficient methods to achieve your goals.</p>
+<p>The scope of these Actions is to provide the user with a set of methods to interact with the SAFE Manager Contract. These methods are used by the ZAI Proxy contract to execute the corresponding operations on the SAFE Engine.</p>
+<h2 id="2-contract-details-23"><a class="header" href="#2-contract-details-23">2. Contract Details</a></h2>
+<h3 id="key-methods-22"><a class="header" href="#key-methods-22">Key Methods:</a></h3>
+<ul>
+<li><code>openSAFE</code>: Creates a new SAFEHandler (associated with a collateral type) and registers it in the SAFE Manager.</li>
+<li><code>generateDebt</code>: Generates debt within a SAFE and transfers the generated coins to the user's address.</li>
+<li><code>lockTokenCollateral</code>: Locks a certain amount of tokens as collateral within a SAFE.</li>
+<li><code>freeTokenCollateral</code>: Frees a certain amount of tokens from a SAFE's collateral, and transfers them to the user's address.</li>
+<li><code>repayAllDebt</code>: Repays all debt within a SAFE (the amount of debt to repay is automatically calculated).</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-23"><a class="header" href="#3-key-mechanisms--concepts-23">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="key-concepts-for-safe-management"><a class="header" href="#key-concepts-for-safe-management">Key Concepts for SAFE Management</a></h3>
+<p>Managing Single-Collateral SAFEs involves a series of actions to effectively handle your collateral and debt. In this context, four core concepts—Lock, Free, Collect, and Exit—play a pivotal role. These actions are integrated into the Basic Actions module, simplifying the interaction with the SAFE Manager Contract and the SAFE Engine. Here's a closer look at each:</p>
+<ul>
+<li><strong>LOCK</strong>: Deposit collateral into a specified SAFE. This effectively "locks" your assets within the SAFE, providing the foundation upon which you can draw debt. It's the starting point for leveraging your assets within the SAFE ecosystem.</li>
+<li><strong>FREE</strong>: The inverse of "Lock." It lets you withdraw or "release" collateral from a SAFE back to your designated address, given that you meet the SAFE's conditions (e.g., maintaining a specific collateral ratio).</li>
+<li><strong>COLLECT</strong>: The "Collect" action is used to transfer collateral from an external address into the proxy contract. This is generally a preparatory step for other actions, such as "Lock," where the collateral will be moved from the proxy to the SAFE.</li>
+<li><strong>EXIT</strong>: The "Exit" action allows you to burn the internal representation of collateral in exchange for ERC20 tokens, which are transferred to your own address. This action is often used when you wish to exit the SAFE ecosystem and convert your assets back to a fungible, transferable form.</li>
+</ul>
+<h2 id="4-gotchas-23"><a class="header" href="#4-gotchas-23">4. Gotchas</a></h2>
+<h3 id="internal-balances-of-the-user"><a class="header" href="#internal-balances-of-the-user">Internal Balances of the User</a></h3>
+<p>In proxy-based systems designed for asset management, the internal balances within the proxy contract are often automatically reset to zero after each transaction. This is because actions are configured to "exit" or transfer any remaining coins or tokens back to the user's own wallet. The design serves dual purposes: it enhances security by not leaving residual assets exposed in the proxy contract, and it simplifies user experience by allowing users to see their complete asset balances directly in their own accounts. Thus, if you observe that the internal balances of your proxy contract are consistently zero, it's because the system is purposefully designed to "exit" any remaining assets, ensuring that no residual value is left lingering within the proxy.</p>
+<h2 id="5-failure-modes-23"><a class="header" href="#5-failure-modes-23">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rewarded-actions"><a class="header" href="#rewarded-actions">Rewarded Actions</a></h1>
+<p>See <a href="detailed/proxies/actions//src/contracts/proxies/actions/RewardedActions.sol/contract.RewardedActions.html">RewardedActions.sol</a> for more details.</p>
+<h2 id="1-introduction-24"><a class="header" href="#1-introduction-24">1. Introduction</a></h2>
+<p>Maintaining the protocol's overall health often involves executing key maintenance methods. To incentivize these interactions, the Rewarded Actions Contract exists as a specialized layer that batches transactions for interacting with Jobs contracts. These Jobs contracts offer rewards to users for successfully calling specific maintenance methods critical to the protocol. By consolidating these calls into batch transactions via the Rewarded Actions Contract, users can more efficiently earn rewards while aiding in the protocol's upkeep.</p>
+<h2 id="2-contract-details-24"><a class="header" href="#2-contract-details-24">2. Contract Details</a></h2>
+<h3 id="key-methods-23"><a class="header" href="#key-methods-23">Key Methods:</a></h3>
+<ul>
+<li><code>startDebtAuction</code>: Starts a debt auction.</li>
+<li><code>startSurplusAction</code>: Starts a surplus auction.</li>
+<li><code>popDebtFromQueue</code>: Pops a debt block from the Accounting Engine's queue.</li>
+<li><code>transferExtraSurplus</code>: Transfers surplus (instead of auctioning it).</li>
+<li><code>liquidateSAFE</code>: Liquidates a SAFE.</li>
+<li><code>updateCollateralPrice</code>: Fether the latest price for a collateral type to update the system.</li>
+<li><code>updateRedemptionRate</code>: Triggers the redemption rate to be updated.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-24"><a class="header" href="#3-key-mechanisms--concepts-24">3. Key Mechanisms &amp; Concepts</a></h2>
+<h3 id="payment-flow"><a class="header" href="#payment-flow">Payment Flow</a></h3>
+<p>In the ZAI ecosystem, when users interact with Jobs contracts for performing key maintenance tasks, the rewards for these actions come from the Stability Fee Treasury. Upon successful execution of a job, the treasury transfers these rewards internally to the user's account within the protocol. Following this, a proxy action is triggered, designed specifically to "burn" these internal coins. This burning process essentially converts the internal balance into ERC20 ZAI tokens, which are then withdrawn to the user's external wallet. Thus, the process seamlessly ensures that users are rewarded in a liquid form of ZAI tokens that can be freely used or traded.</p>
+<h2 id="4-gotchas-24"><a class="header" href="#4-gotchas-24">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-24"><a class="header" href="#5-failure-modes-24">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bidding-actions"><a class="header" href="#bidding-actions">Bidding Actions</a></h1>
+<p>See <a href="detailed/proxies/actions//src/contracts/proxies/actions/CollateralBidActions.sol/contract.CollateralBidActions.html">CollateralBidActions.sol</a>, <a href="detailed/proxies/actions//src/contracts/proxies/actions/DebtBidActions.sol/contract.DebtBidActions.html">DebtBidActions.sol</a>, <a href="detailed/proxies/actions//src/contracts/proxies/actions/SurplusBidActions.sol/contract.SurplusBidActions.html">SurplusBidActions.sol</a> and <a href="detailed/proxies/actions//src/contracts/proxies/actions/PostSettlementSurplusBidActions.sol/contract.PostSettlementSurplusBidActions.html">PostSettlementSurplusBidActions.sol</a> for more details.</p>
+<h2 id="1-introduction-25"><a class="header" href="#1-introduction-25">1. Introduction</a></h2>
+<p>These contracts serve as the interaction layer between users and the auction houses responsible for handling collateral liquidations, debt auctions, and surplus auctions respectively.</p>
+<h2 id="2-contract-details-25"><a class="header" href="#2-contract-details-25">2. Contract Details</a></h2>
+<h3 id="key-methods-24"><a class="header" href="#key-methods-24">Key Methods:</a></h3>
+<ul>
+<li><code>buyCollateral</code>: Allows users to bid on collateral auctions.</li>
+<li><code>decreaseSoldAmount</code>: Allows users to bid on debt auctions.</li>
+<li><code>increaseBidSize</code>: Allows users to bid on surplus auctions.</li>
+<li><code>settleAuction</code>: Settles an auction and withraws the corresponding funds to the user's account.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-25"><a class="header" href="#3-key-mechanisms--concepts-25">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-25"><a class="header" href="#4-gotchas-25">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-25"><a class="header" href="#5-failure-modes-25">5. Failure Modes</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="settlement-actions"><a class="header" href="#settlement-actions">Settlement Actions</a></h1>
+<p>See <a href="detailed/proxies/actions//src/contracts/proxies/actions/GlobalSettlementActions.sol/contract.GlobalSettlementActions.html">GlobalSettlementActions.sol</a> for more details.</p>
+<h2 id="1-introduction-26"><a class="header" href="#1-introduction-26">1. Introduction</a></h2>
+<p>Following a Global Settlement, the Settlement Actions Contract plays a critical role by batching essential transactions needed to interact with the protocol. This contract simplifies user interactions and boosts efficiency by consolidating multiple calls into one, easing the transition to the system's final state. Whether claiming collateral or finalizing debts, the Settlement Actions Contract is the go-to mechanism for all post-settlement activities.</p>
+<h2 id="2-contract-details-26"><a class="header" href="#2-contract-details-26">2. Contract Details</a></h2>
+<h3 id="key-methods-25"><a class="header" href="#key-methods-25">Key Methods:</a></h3>
+<ul>
+<li><code>freeCollateral</code>: Allows users to claim their remaining collateral after a SAFE was processed.</li>
+<li><code>prepareCoinsForRedeeming</code>: Deposits system coins for them to be later redeemed.</li>
+<li><code>redeemCollateral</code>: Claims the corresponding collateral for a given amount of system coins deposited.</li>
+</ul>
+<h2 id="3-key-mechanisms--concepts-26"><a class="header" href="#3-key-mechanisms--concepts-26">3. Key Mechanisms &amp; Concepts</a></h2>
+<h2 id="4-gotchas-26"><a class="header" href="#4-gotchas-26">4. Gotchas</a></h2>
+<h2 id="5-failure-modes-26"><a class="header" href="#5-failure-modes-26">5. Failure Modes</a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
